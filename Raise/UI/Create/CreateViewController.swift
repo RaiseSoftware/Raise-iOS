@@ -32,6 +32,4 @@ extension CreateViewController: UITextFieldDelegate {
             return textField.resignFirstResponder()
         }
     }
-
-
 }
