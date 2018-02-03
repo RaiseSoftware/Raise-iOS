@@ -7,12 +7,15 @@ PODS:
   - AppCenter/Core (1.3.0)
   - AppCenter/Crashes (1.3.0):
     - AppCenter/Core
+  - AppCenter/Distribute (1.3.0):
+    - AppCenter/Core
   - Socket.IO-Client-Swift (13.1.1):
     - Starscream (~> 3.0.2)
   - Starscream (3.0.4)
 
 DEPENDENCIES:
   - AppCenter (~> 1.0)
+  - AppCenter/Distribute (~> 1.0)
   - Socket.IO-Client-Swift (~> 13.0)
 
 SPEC CHECKSUMS:
@@ -20,6 +23,6 @@ SPEC CHECKSUMS:
   Socket.IO-Client-Swift: f22222913f29801e30ae0df712db663ec096edc2
   Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
 
-PODFILE CHECKSUM: 71ed2b9c624372ea63f2546cc85376c05ed6eff3
+PODFILE CHECKSUM: b8781a6d71245391700645f4c1d6c6266a5c7d9d
 
 COCOAPODS: 1.4.0
