@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         MSAppCenter.start("be052172-d3f9-4639-8792-0239955245fd", withServices: [MSCrashes.self, MSDistribute.self])
 
+        configureStyles()
+
         return true
+    }
+
+    func configureStyles() {
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
     }
 }
