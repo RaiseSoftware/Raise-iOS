@@ -63,12 +63,12 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-rp-zMI">
                                         <rect key="frame" x="15" y="49.5" width="270" height="1"/>
-                                        <color key="backgroundColor" white="0.72295464409722221" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.87790256076388884" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="4Gj-7v-9av"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c6J-l9-hDU">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c6J-l9-hDU">
                                         <rect key="frame" x="15" y="0.0" width="270" height="49.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -78,7 +78,7 @@
                                             <outlet property="delegate" destination="cWn-PJ-ALH" id="lnM-ex-CBD"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Game Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XoT-SP-7Aw">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Game name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XoT-SP-7Aw">
                                         <rect key="frame" x="15" y="50.5" width="270" height="49.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>

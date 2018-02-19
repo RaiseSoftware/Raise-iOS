@@ -16,6 +16,7 @@
 		9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05B609202148C7006F6428 /* AppDelegate.swift */; };
 		9A05B611202148C8006F6428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A05B610202148C8006F6428 /* Assets.xcassets */; };
 		9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A05B612202148C8006F6428 /* LaunchScreen.storyboard */; };
+		9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A156E2E203B3958003EA982 /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9A05B610202148C8006F6428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A05B613202148C8006F6428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A05B615202148C8006F6428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A156E2E203B3958003EA982 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		A653B240EA992B97D6E99B1E /* Pods-Raise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raise/Pods-Raise.debug.xcconfig"; sourceTree = "<group>"; };
 		B989110197980C493A150A79 /* Pods_Raise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				9A009E682026615800F0A4C6 /* Join.storyboard */,
+				9A156E2E203B3958003EA982 /* JoinViewController.swift */,
 			);
 			path = Join;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A009E6B202667F700F0A4C6 /* CreateViewController.swift in Sources */,
+				9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */,
 				9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

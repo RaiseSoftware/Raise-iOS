@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Join View Controller-->
         <scene sceneID="ctU-G7-iWZ">
             <objects>
-                <viewController id="mNi-RE-9OS" sceneMemberID="viewController">
+                <viewController id="mNi-RE-9OS" customClass="JoinViewController" customModule="Raise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HFK-JH-CHN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,17 +32,97 @@
                                     <color key="titleColor" white="0.0" alpha="0.30059396399999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-Lr-01H">
+                                <rect key="frame" x="37" y="263.5" width="300" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGt-qd-7Ka">
+                                        <rect key="frame" x="15" y="49.5" width="270" height="1"/>
+                                        <color key="backgroundColor" white="0.87790256079999995" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="suq-Oa-Ogh"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-D8-tPM">
+                                        <rect key="frame" x="15" y="0.0" width="270" height="49.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged" destination="mNi-RE-9OS" eventType="editingChanged" id="gCs-ge-Zl7"/>
+                                            <outlet property="delegate" destination="mNi-RE-9OS" id="gfl-D3-Lnn"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Game ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYX-BR-w0z">
+                                        <rect key="frame" x="15" y="50.5" width="270" height="49.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged" destination="mNi-RE-9OS" eventType="editingChanged" id="MfC-qU-yKX"/>
+                                            <outlet property="delegate" destination="mNi-RE-9OS" id="8MN-N7-9Td"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="AYX-BR-w0z" secondAttribute="trailing" constant="15" id="H5M-Mi-Xms"/>
+                                    <constraint firstItem="AYX-BR-w0z" firstAttribute="top" secondItem="OGt-qd-7Ka" secondAttribute="bottom" id="QKt-2H-elU"/>
+                                    <constraint firstItem="OGt-qd-7Ka" firstAttribute="top" secondItem="Aq9-D8-tPM" secondAttribute="bottom" id="Qrz-N7-0Nu"/>
+                                    <constraint firstAttribute="height" constant="100" id="RP3-z8-1IP"/>
+                                    <constraint firstItem="OGt-qd-7Ka" firstAttribute="leading" secondItem="Jc9-Lr-01H" secondAttribute="leading" constant="15" id="Ulc-sp-Bba"/>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="Wfi-Ge-9pb"/>
+                                    <constraint firstAttribute="bottom" secondItem="AYX-BR-w0z" secondAttribute="bottom" id="Wpe-G2-LOk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aq9-D8-tPM" secondAttribute="trailing" constant="15" id="byP-c9-bYU"/>
+                                    <constraint firstAttribute="trailing" secondItem="OGt-qd-7Ka" secondAttribute="trailing" constant="15" id="ezU-Me-pbh"/>
+                                    <constraint firstItem="OGt-qd-7Ka" firstAttribute="centerY" secondItem="Jc9-Lr-01H" secondAttribute="centerY" id="fl0-o4-qOy"/>
+                                    <constraint firstItem="Aq9-D8-tPM" firstAttribute="leading" secondItem="Jc9-Lr-01H" secondAttribute="leading" constant="15" id="m3O-e0-IBL"/>
+                                    <constraint firstItem="AYX-BR-w0z" firstAttribute="leading" secondItem="Jc9-Lr-01H" secondAttribute="leading" constant="15" id="w3t-pe-dzK"/>
+                                    <constraint firstItem="Aq9-D8-tPM" firstAttribute="top" secondItem="Jc9-Lr-01H" secondAttribute="top" id="xBE-PX-AJD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z85-xK-2Xm">
+                                <rect key="frame" x="37" y="200.5" width="300" height="43"/>
+                                <string key="text">Enter your name and the Game ID
+in order to join</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.46274509800000002" green="0.76078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Spl-uo-nno" firstAttribute="bottom" secondItem="EDA-AY-kJ2" secondAttribute="bottom" id="15a-sp-fbJ"/>
+                            <constraint firstItem="Jc9-Lr-01H" firstAttribute="centerY" secondItem="HFK-JH-CHN" secondAttribute="centerY" constant="-20" id="1qF-AA-7KN"/>
+                            <constraint firstItem="z85-xK-2Xm" firstAttribute="width" secondItem="Jc9-Lr-01H" secondAttribute="width" id="43U-6R-yYW"/>
+                            <constraint firstItem="Jc9-Lr-01H" firstAttribute="centerX" secondItem="HFK-JH-CHN" secondAttribute="centerX" id="E8x-j9-8Q0"/>
                             <constraint firstItem="Spl-uo-nno" firstAttribute="leading" secondItem="EDA-AY-kJ2" secondAttribute="leading" id="HAT-YF-50B"/>
+                            <constraint firstItem="Jc9-Lr-01H" firstAttribute="top" secondItem="z85-xK-2Xm" secondAttribute="bottom" constant="20" id="NO1-Nk-124"/>
                             <constraint firstItem="Spl-uo-nno" firstAttribute="trailing" secondItem="EDA-AY-kJ2" secondAttribute="trailing" id="T9G-aC-KP5"/>
+                            <constraint firstItem="z85-xK-2Xm" firstAttribute="centerX" secondItem="HFK-JH-CHN" secondAttribute="centerX" id="VR5-pV-r3o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EDA-AY-kJ2"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="C2p-vl-iXC" appends="YES" id="H8C-VK-97N"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="gameIDTextField" destination="AYX-BR-w0z" id="OBy-0U-Z7Z"/>
+                        <outlet property="joinGameButton" destination="Spl-uo-nno" id="cGp-xU-CUF"/>
+                        <outlet property="userNameTextField" destination="Aq9-D8-tPM" id="rDk-nB-f5p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksl-9A-cH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="C2p-vl-iXC">
+                    <connections>
+                        <action selector="dismissKeyboard" destination="mNi-RE-9OS" id="Sn8-2y-87H"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-66.400000000000006" y="210.94452773613196"/>
         </scene>
