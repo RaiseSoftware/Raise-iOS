@@ -15,5 +15,6 @@ struct CreateResponse: Codable {
     struct PokerGame: Codable {
         let gameId: String
         let passcode: String?
+        let qrcode: String
     }
 }

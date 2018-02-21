@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Details View Controller-->
         <scene sceneID="KjA-fb-Oof">
             <objects>
-                <viewController id="brR-zf-JSu" sceneMemberID="viewController">
+                <viewController id="brR-zf-JSu" customClass="GameDetailsViewController" customModule="Raise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ne-DL-kAu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,19 +32,84 @@
                                     <color key="titleColor" white="0.0" alpha="0.30059396399999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddm-kn-vcj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5Y0-sd-Ihn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="7775"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPw-DZ-15c">
+                                                <rect key="frame" x="8" y="40" width="359" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game ID:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbk-sV-MOu">
+                                                <rect key="frame" x="8" y="85" width="359" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passcode:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulc-b5-Hvb">
+                                                <rect key="frame" x="8" y="120.5" width="359" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------ or ------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RO-2f-amF">
+                                                <rect key="frame" x="8" y="156" width="359" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCG-F3-qRj">
+                                                <rect key="frame" x="8" y="191.5" width="359" height="7400.5"/>
+                                                <string key="text">Anyone can scan QR Code to join.
+Tap to share.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kv0-fN-UAk">
+                                                <rect key="frame" x="8" y="7607" width="359" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="160" id="tCU-jP-tex"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="20" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Y0-sd-Ihn" firstAttribute="top" secondItem="Ddm-kn-vcj" secondAttribute="top" id="VEA-3w-JJg"/>
+                                    <constraint firstItem="5Y0-sd-Ihn" firstAttribute="leading" secondItem="Ddm-kn-vcj" secondAttribute="leading" id="clm-RX-nDe"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Y0-sd-Ihn" secondAttribute="bottom" id="gv7-MF-s3U"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Y0-sd-Ihn" secondAttribute="trailing" id="kOp-MX-Qbk"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.59607843137254901" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="E3I-pT-SYU" firstAttribute="trailing" secondItem="C6g-su-PUU" secondAttribute="trailing" id="6wG-th-YQP"/>
                             <constraint firstItem="E3I-pT-SYU" firstAttribute="bottom" secondItem="C6g-su-PUU" secondAttribute="bottom" id="CLd-ij-wrs"/>
+                            <constraint firstItem="Ddm-kn-vcj" firstAttribute="top" secondItem="5ne-DL-kAu" secondAttribute="top" id="Jd8-9F-bnB"/>
                             <constraint firstItem="E3I-pT-SYU" firstAttribute="leading" secondItem="C6g-su-PUU" secondAttribute="leading" id="KGc-cu-buC"/>
+                            <constraint firstItem="Ddm-kn-vcj" firstAttribute="leading" secondItem="C6g-su-PUU" secondAttribute="leading" id="Zdx-pC-8Mz"/>
+                            <constraint firstItem="5Y0-sd-Ihn" firstAttribute="width" secondItem="5ne-DL-kAu" secondAttribute="width" id="aA1-cN-e2H"/>
+                            <constraint firstItem="E3I-pT-SYU" firstAttribute="top" secondItem="Ddm-kn-vcj" secondAttribute="bottom" id="dgk-WE-qom"/>
+                            <constraint firstItem="Ddm-kn-vcj" firstAttribute="trailing" secondItem="C6g-su-PUU" secondAttribute="trailing" id="xKI-Wq-AKv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C6g-su-PUU"/>
                     </view>
+                    <connections>
+                        <outlet property="gameIDLabel" destination="Wbk-sV-MOu" id="0Ya-E7-wU9"/>
+                        <outlet property="passcodeLabel" destination="Ulc-b5-Hvb" id="Oev-60-exp"/>
+                        <outlet property="qrImageView" destination="Kv0-fN-UAk" id="NDE-np-eqI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ea-LD-y1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-438" y="60"/>
+            <point key="canvasLocation" x="-439.19999999999999" y="59.820089955022496"/>
         </scene>
     </scenes>
 </document>

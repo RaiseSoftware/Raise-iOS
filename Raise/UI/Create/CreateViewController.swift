@@ -38,12 +38,13 @@ class CreateViewController: UIViewController {
             deckType = .tshirt
         }
 
-        let request = CreateRequest(gameName: gameName, deckType: deckType, requiresPassword: requiresPasswordSwitch.isOn, moderatorName: moderatorName)
+        let request = CreateRequest(gameName: gameName, deckType: deckType, requiresPasscode: requiresPasswordSwitch.isOn, moderatorName: moderatorName)
         SVProgressHUD.show()
         API.createGame(request) { [weak self] response in
             SVProgressHUD.dismiss()
-            if response != nil {
-                self?.performSegue(withIdentifier: "showGameDetails", sender: nil)
+            if let response = response, let gameDetailsViewController = UIStoryboard(name: "GameDetails", bundle: nil).instantiateInitialViewController() as? GameDetailsViewController {
+                gameDetailsViewController.gameResponse = response
+                self?.navigationController?.pushViewController(gameDetailsViewController, animated: true)
             } else {
                 self?.presentErrorAlert(message: "Unable to create game. Please try again.")
             }

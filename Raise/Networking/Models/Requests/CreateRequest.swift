@@ -16,15 +16,15 @@ struct CreateRequest: Codable {
     struct PokerGame: Codable {
         let gameName: String
         let deckType: DeckType
-        let requiresPassword: Bool
+        let requiresPasscode: Bool
     }
 
     struct Moderator: Codable {
         let name: String
     }
 
-    init(gameName: String, deckType: DeckType, requiresPassword: Bool, moderatorName: String) {
-        pokerGame = PokerGame(gameName: gameName, deckType: deckType, requiresPassword: requiresPassword)
+    init(gameName: String, deckType: DeckType, requiresPasscode: Bool, moderatorName: String) {
+        pokerGame = PokerGame(gameName: gameName, deckType: deckType, requiresPasscode: requiresPasscode)
         moderator = Moderator(name: moderatorName)
     }
 }
