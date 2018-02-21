@@ -11,6 +11,7 @@ import AppCenter
 import AppCenterCrashes
 import AppCenterDistribute
 import IQKeyboardManagerSwift
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,5 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
+
+        SVProgressHUD.setDefaultMaskType(.black)
     }
 }

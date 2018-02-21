@@ -31,6 +31,9 @@
                                 <state key="disabled">
                                     <color key="titleColor" white="0.0" alpha="0.3005939640410959" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createGameButtonPressed" destination="cWn-PJ-ALH" eventType="touchUpInside" id="oPJ-T0-u0O"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O2d-Md-oex">
                                 <rect key="frame" x="37.5" y="205.5" width="300" height="29"/>
@@ -146,8 +149,11 @@
                     </view>
                     <connections>
                         <outlet property="createGameButton" destination="57f-eH-Y7w" id="7BN-il-5Sr"/>
+                        <outlet property="deckTypeSegmentedControl" destination="O2d-Md-oex" id="Nav-ub-ch5"/>
                         <outlet property="gameNameTextField" destination="XoT-SP-7Aw" id="bIa-ZT-eb0"/>
+                        <outlet property="requiresPasswordSwitch" destination="wwG-0e-S1y" id="uK4-NJ-Ki5"/>
                         <outlet property="userNameTextField" destination="c6J-l9-hDU" id="OoR-rn-tj8"/>
+                        <segue destination="AYH-Oj-Z9t" kind="show" identifier="showGameDetails" id="tTp-6E-QmM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HP-ZN-zK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,6 +164,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-66.400000000000006" y="210.94452773613196"/>
+        </scene>
+        <!--GameDetails-->
+        <scene sceneID="I0y-I0-dsj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameDetails" id="AYH-Oj-Z9t" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzy-kN-DdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="491" y="213"/>
         </scene>
     </scenes>
 </document>

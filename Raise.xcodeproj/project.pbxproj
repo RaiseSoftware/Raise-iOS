@@ -17,6 +17,12 @@
 		9A05B611202148C8006F6428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A05B610202148C8006F6428 /* Assets.xcassets */; };
 		9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A05B612202148C8006F6428 /* LaunchScreen.storyboard */; };
 		9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A156E2E203B3958003EA982 /* JoinViewController.swift */; };
+		9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */; };
+		9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE0203CE76C006E08D2 /* API.swift */; };
+		9A4E9DE4203CE99D006E08D2 /* CreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE3203CE99D006E08D2 /* CreateResponse.swift */; };
+		9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE5203CE9D4006E08D2 /* DeckType.swift */; };
+		9A4E9DEB203CF45D006E08D2 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */; };
+		9A4E9DEE203CF5AF006E08D2 /* GameDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E9DED203CF5AF006E08D2 /* GameDetails.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		9A05B613202148C8006F6428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A05B615202148C8006F6428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A156E2E203B3958003EA982 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
+		9A4E9DE0203CE76C006E08D2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9A4E9DE3203CE99D006E08D2 /* CreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResponse.swift; sourceTree = "<group>"; };
+		9A4E9DE5203CE9D4006E08D2 /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
+		9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		9A4E9DED203CF5AF006E08D2 /* GameDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameDetails.storyboard; sourceTree = "<group>"; };
 		A653B240EA992B97D6E99B1E /* Pods-Raise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raise/Pods-Raise.debug.xcconfig"; sourceTree = "<group>"; };
 		B989110197980C493A150A79 /* Pods_Raise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				9A009E6220265DF200F0A4C6 /* Create */,
+				9A4E9DEC203CF59E006E08D2 /* Game Details */,
 				9A009E59202649DA00F0A4C6 /* Intro */,
 				9A009E672026614800F0A4C6 /* Join */,
 			);
@@ -115,10 +128,71 @@
 			isa = PBXGroup;
 			children = (
 				9A05B609202148C7006F6428 /* AppDelegate.swift */,
+				9A4E9DDC203CE5F6006E08D2 /* Networking */,
 				9A009E58202649D300F0A4C6 /* UI */,
+				9A4E9DE8203CF443006E08D2 /* Utility */,
 				9A8994A820214E3700D147A9 /* Supporting Files */,
 			);
 			path = Raise;
+			sourceTree = "<group>";
+		};
+		9A4E9DDC203CE5F6006E08D2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9A4E9DE0203CE76C006E08D2 /* API.swift */,
+				9A4E9DE7203CE9DF006E08D2 /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9A4E9DDD203CE61D006E08D2 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		9A4E9DE2203CE8D9006E08D2 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				9A4E9DE3203CE99D006E08D2 /* CreateResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		9A4E9DE7203CE9DF006E08D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A4E9DE5203CE9D4006E08D2 /* DeckType.swift */,
+				9A4E9DDD203CE61D006E08D2 /* Requests */,
+				9A4E9DE2203CE8D9006E08D2 /* Responses */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A4E9DE8203CF443006E08D2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9A4E9DE9203CF44F006E08D2 /* Extensions */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9A4E9DE9203CF44F006E08D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9A4E9DEC203CF59E006E08D2 /* Game Details */ = {
+			isa = PBXGroup;
+			children = (
+				9A4E9DED203CF5AF006E08D2 /* GameDetails.storyboard */,
+			);
+			path = "Game Details";
 			sourceTree = "<group>";
 		};
 		9A8994A820214E3700D147A9 /* Supporting Files */ = {
@@ -205,6 +279,7 @@
 				9A009E692026615800F0A4C6 /* Join.storyboard in Resources */,
 				9A009E6420265E2300F0A4C6 /* Create.storyboard in Resources */,
 				9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */,
+				9A4E9DEE203CF5AF006E08D2 /* GameDetails.storyboard in Resources */,
 				9A009E5F20264B2200F0A4C6 /* Variane Script.ttf in Resources */,
 				9A05B611202148C8006F6428 /* Assets.xcassets in Resources */,
 				9A009E5B20264A7400F0A4C6 /* Intro.storyboard in Resources */,
@@ -240,12 +315,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
@@ -279,9 +356,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4E9DEB203CF45D006E08D2 /* UIViewControllerExtensions.swift in Sources */,
 				9A009E6B202667F700F0A4C6 /* CreateViewController.swift in Sources */,
 				9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */,
+				9A4E9DE4203CE99D006E08D2 /* CreateResponse.swift in Sources */,
 				9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */,
+				9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */,
+				9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */,
+				9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
