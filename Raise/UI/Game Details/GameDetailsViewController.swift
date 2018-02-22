@@ -12,7 +12,7 @@ class GameDetailsViewController: UIViewController {
 
     @IBOutlet weak var gameIDLabel: UILabel!
     @IBOutlet weak var passcodeLabel: UILabel!
-    @IBOutlet weak var qrImageView: UIImageView!
+    @IBOutlet weak var qrCodeButton: UIButton!
 
     var gameResponse: CreateResponse!
 
@@ -28,8 +28,20 @@ class GameDetailsViewController: UIViewController {
             passcodeLabel.isHidden = true
         }
 
-        if let imageData = Data(base64Encoded: gameResponse.pokerGame.qrcode.components(separatedBy: ",")[1]) {
-            qrImageView.image = UIImage(data: imageData)
+        let base64QRCodeImageComponents = gameResponse.pokerGame.qrcode.components(separatedBy: ",")
+        if base64QRCodeImageComponents.count > 1, let imageData = Data(base64Encoded: base64QRCodeImageComponents[1]) {
+            qrCodeButton.imageView?.contentMode = .scaleAspectFit
+            qrCodeButton.setImage(UIImage(data: imageData)?.withRenderingMode(.alwaysOriginal), for: .normal)
         }
+    }
+
+    @IBAction func qrCodeTapped() {
+        guard let qrCodeImage = qrCodeButton.image(for: .normal) else {
+            assertionFailure("Unable to get QR code")
+            return
+        }
+
+        let activityViewController = UIActivityViewController(activityItems: [qrCodeImage], applicationActivities: nil)
+        present(activityViewController, animated: true)
     }
 }
