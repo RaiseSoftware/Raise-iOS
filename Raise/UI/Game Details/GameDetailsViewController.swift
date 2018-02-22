@@ -14,6 +14,9 @@ class GameDetailsViewController: UIViewController {
     @IBOutlet weak var passcodeLabel: UILabel!
     @IBOutlet weak var qrCodeButton: UIButton!
 
+    @IBOutlet weak var containerScrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+
     var gameResponse: CreateResponse!
 
     override func viewDidLoad() {
@@ -43,5 +46,20 @@ class GameDetailsViewController: UIViewController {
 
         let activityViewController = UIActivityViewController(activityItems: [qrCodeImage], applicationActivities: nil)
         present(activityViewController, animated: true)
+    }
+}
+
+extension GameDetailsViewController: UIScrollViewDelegate {
+
+    @IBAction func pageControlTapped() {
+        let x = CGFloat(pageControl.currentPage) * containerScrollView.frame.size.width
+        containerScrollView.setContentOffset(CGPoint(x: x, y: 0.0), animated: true)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard let scrollView = containerScrollView else { return }
+
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = Int(pageNumber)
     }
 }
