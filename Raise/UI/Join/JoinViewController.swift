@@ -21,6 +21,14 @@ class JoinViewController: UIViewController {
     @IBAction func textFieldEditingChanged() {
         joinGameButton.isEnabled = userNameTextField.hasText && gameIDTextField.hasText
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        if let navController = segue.destination as? UINavigationController, let qrCodeViewController = navController.viewControllers.first as? QRCodeScannerViewController {
+            qrCodeViewController.delegate = self
+        }
+    }
 }
 
 extension JoinViewController: UITextFieldDelegate {
@@ -30,6 +38,15 @@ extension JoinViewController: UITextFieldDelegate {
             return gameIDTextField.becomeFirstResponder()
         } else {
             return textField.resignFirstResponder()
+        }
+    }
+}
+
+extension JoinViewController: QRCodeScannerViewControllerDelegate {
+
+    func qrCodeFound(value: String) {
+        if let gameInfo = value.toDictionary() {
+            gameIDTextField.text = gameInfo["gameId"] as? String
         }
     }
 }

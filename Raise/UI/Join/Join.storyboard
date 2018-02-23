@@ -93,6 +93,25 @@ in order to join</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----  or  -----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-zF-Tin">
+                                <rect key="frame" x="16" y="383.5" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQA-eD-967">
+                                <rect key="frame" x="16" y="404.5" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ku7-IN-S0b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Scan QR code to join">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ag7-rz-xNE" kind="presentation" id="jrd-oq-YJS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46274509800000002" green="0.76078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -100,11 +119,17 @@ in order to join</string>
                             <constraint firstItem="Spl-uo-nno" firstAttribute="bottom" secondItem="EDA-AY-kJ2" secondAttribute="bottom" id="15a-sp-fbJ"/>
                             <constraint firstItem="Jc9-Lr-01H" firstAttribute="centerY" secondItem="HFK-JH-CHN" secondAttribute="centerY" constant="-20" id="1qF-AA-7KN"/>
                             <constraint firstItem="z85-xK-2Xm" firstAttribute="width" secondItem="Jc9-Lr-01H" secondAttribute="width" id="43U-6R-yYW"/>
+                            <constraint firstItem="RQA-eD-967" firstAttribute="top" secondItem="mY9-zF-Tin" secondAttribute="bottom" id="6yH-ug-SeT"/>
+                            <constraint firstItem="EDA-AY-kJ2" firstAttribute="trailing" secondItem="RQA-eD-967" secondAttribute="trailing" constant="16" id="9yi-xq-JrK"/>
                             <constraint firstItem="Jc9-Lr-01H" firstAttribute="centerX" secondItem="HFK-JH-CHN" secondAttribute="centerX" id="E8x-j9-8Q0"/>
+                            <constraint firstItem="mY9-zF-Tin" firstAttribute="top" secondItem="Jc9-Lr-01H" secondAttribute="bottom" constant="20" id="F26-BW-VvY"/>
                             <constraint firstItem="Spl-uo-nno" firstAttribute="leading" secondItem="EDA-AY-kJ2" secondAttribute="leading" id="HAT-YF-50B"/>
+                            <constraint firstItem="RQA-eD-967" firstAttribute="leading" secondItem="EDA-AY-kJ2" secondAttribute="leading" constant="16" id="HbY-qx-Yq1"/>
                             <constraint firstItem="Jc9-Lr-01H" firstAttribute="top" secondItem="z85-xK-2Xm" secondAttribute="bottom" constant="20" id="NO1-Nk-124"/>
                             <constraint firstItem="Spl-uo-nno" firstAttribute="trailing" secondItem="EDA-AY-kJ2" secondAttribute="trailing" id="T9G-aC-KP5"/>
                             <constraint firstItem="z85-xK-2Xm" firstAttribute="centerX" secondItem="HFK-JH-CHN" secondAttribute="centerX" id="VR5-pV-r3o"/>
+                            <constraint firstItem="mY9-zF-Tin" firstAttribute="leading" secondItem="EDA-AY-kJ2" secondAttribute="leading" constant="16" id="eap-eo-kCb"/>
+                            <constraint firstItem="EDA-AY-kJ2" firstAttribute="trailing" secondItem="mY9-zF-Tin" secondAttribute="trailing" constant="16" id="otL-xB-C79"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EDA-AY-kJ2"/>
                         <connections>
@@ -125,6 +150,44 @@ in order to join</string>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-66.400000000000006" y="210.94452773613196"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dok-IU-6HA">
+            <objects>
+                <navigationController id="Ag7-rz-xNE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QAx-dA-g12">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dcA-A6-xJk" kind="relationship" relationship="rootViewController" id="vMW-uL-Gi6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJc-Lg-jH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="211"/>
+        </scene>
+        <!--Code Scanner View Controller-->
+        <scene sceneID="uKg-Bj-9PV">
+            <objects>
+                <viewController id="dcA-A6-xJk" customClass="QRCodeScannerViewController" customModule="Raise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zOX-tG-rc1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hve-qF-qG3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NT2-eb-XBk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="rPG-lq-8OK">
+                            <connections>
+                                <action selector="closePressed" destination="dcA-A6-xJk" id="PfV-vr-80h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9I-0W-SFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1351" y="211"/>
         </scene>
     </scenes>
 </document>

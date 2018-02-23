@@ -24,6 +24,8 @@
 		9A4E9DEB203CF45D006E08D2 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */; };
 		9A4E9DEE203CF5AF006E08D2 /* GameDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E9DED203CF5AF006E08D2 /* GameDetails.storyboard */; };
 		9A4E9DF0203D011D006E08D2 /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DEF203D011D006E08D2 /* GameDetailsViewController.swift */; };
+		9A8FECAB203F8B6F007CC898 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FECAA203F8B6F007CC898 /* QRCodeScannerViewController.swift */; };
+		9A8FECAD203F953C007CC898 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FECAC203F953C007CC898 /* StringExtensions.swift */; };
 		9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA77DBB203E4CC5003BDDC9 /* PlayerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9A4E9DED203CF5AF006E08D2 /* GameDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameDetails.storyboard; sourceTree = "<group>"; };
 		9A4E9DEF203D011D006E08D2 /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
+		9A8FECAA203F8B6F007CC898 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
+		9A8FECAC203F953C007CC898 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		9AA77DBB203E4CC5003BDDC9 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		A653B240EA992B97D6E99B1E /* Pods-Raise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raise/Pods-Raise.debug.xcconfig"; sourceTree = "<group>"; };
 		B989110197980C493A150A79 /* Pods_Raise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,7 @@
 			children = (
 				9A009E682026615800F0A4C6 /* Join.storyboard */,
 				9A156E2E203B3958003EA982 /* JoinViewController.swift */,
+				9A8FECAA203F8B6F007CC898 /* QRCodeScannerViewController.swift */,
 			);
 			path = Join;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 		9A4E9DE9203CF44F006E08D2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9A8FECAC203F953C007CC898 /* StringExtensions.swift */,
 				9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
@@ -362,12 +368,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8FECAD203F953C007CC898 /* StringExtensions.swift in Sources */,
 				9A4E9DEB203CF45D006E08D2 /* UIViewControllerExtensions.swift in Sources */,
 				9A4E9DF0203D011D006E08D2 /* GameDetailsViewController.swift in Sources */,
 				9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */,
 				9A009E6B202667F700F0A4C6 /* CreateViewController.swift in Sources */,
 				9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */,
 				9A4E9DE4203CE99D006E08D2 /* CreateResponse.swift in Sources */,
+				9A8FECAB203F8B6F007CC898 /* QRCodeScannerViewController.swift in Sources */,
 				9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */,
 				9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */,
 				9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */,
