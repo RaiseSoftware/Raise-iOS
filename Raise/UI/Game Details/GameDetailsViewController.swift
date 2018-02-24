@@ -17,7 +17,7 @@ class GameDetailsViewController: UIViewController {
     @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
 
-    var gameResponse: CreateResponse!
+    var gameResponse: GameResponse!
 
     override func viewDidLoad() {
         super.viewDidLoad()

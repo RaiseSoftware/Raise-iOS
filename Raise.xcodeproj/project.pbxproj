@@ -17,9 +17,10 @@
 		9A05B611202148C8006F6428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A05B610202148C8006F6428 /* Assets.xcassets */; };
 		9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A05B612202148C8006F6428 /* LaunchScreen.storyboard */; };
 		9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A156E2E203B3958003EA982 /* JoinViewController.swift */; };
+		9A1C54112041D94500EAF4ED /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C54102041D94500EAF4ED /* Socket.swift */; };
 		9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */; };
 		9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE0203CE76C006E08D2 /* API.swift */; };
-		9A4E9DE4203CE99D006E08D2 /* CreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE3203CE99D006E08D2 /* CreateResponse.swift */; };
+		9A4E9DE4203CE99D006E08D2 /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */; };
 		9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE5203CE9D4006E08D2 /* DeckType.swift */; };
 		9A4E9DEB203CF45D006E08D2 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */; };
 		9A4E9DEE203CF5AF006E08D2 /* GameDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E9DED203CF5AF006E08D2 /* GameDetails.storyboard */; };
@@ -42,9 +43,10 @@
 		9A05B613202148C8006F6428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A05B615202148C8006F6428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A156E2E203B3958003EA982 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		9A1C54102041D94500EAF4ED /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
 		9A4E9DE0203CE76C006E08D2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		9A4E9DE3203CE99D006E08D2 /* CreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResponse.swift; sourceTree = "<group>"; };
+		9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 		9A4E9DE5203CE9D4006E08D2 /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
 		9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9A4E9DED203CF5AF006E08D2 /* GameDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameDetails.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				9A4E9DE0203CE76C006E08D2 /* API.swift */,
+				9A1C54102041D94500EAF4ED /* Socket.swift */,
 				9A4E9DE7203CE9DF006E08D2 /* Models */,
 			);
 			path = Networking;
@@ -165,7 +168,7 @@
 		9A4E9DE2203CE8D9006E08D2 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				9A4E9DE3203CE99D006E08D2 /* CreateResponse.swift */,
+				9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -374,7 +377,8 @@
 				9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */,
 				9A009E6B202667F700F0A4C6 /* CreateViewController.swift in Sources */,
 				9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */,
-				9A4E9DE4203CE99D006E08D2 /* CreateResponse.swift in Sources */,
+				9A4E9DE4203CE99D006E08D2 /* GameResponse.swift in Sources */,
+				9A1C54112041D94500EAF4ED /* Socket.swift in Sources */,
 				9A8FECAB203F8B6F007CC898 /* QRCodeScannerViewController.swift in Sources */,
 				9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */,
 				9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */,

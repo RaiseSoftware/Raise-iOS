@@ -1,5 +1,5 @@
 //
-//  CreateResponse.swift
+//  GameResponse.swift
 //  Raise
 //
 //  Created by Stephen Hayes on 2/20/18.
@@ -8,13 +8,18 @@
 
 import Foundation
 
-struct CreateResponse: Codable {
+struct GameResponse: Codable {
 
     let pokerGame: PokerGame
+    let token: Token
 
     struct PokerGame: Codable {
         let gameId: String
         let passcode: String?
         let qrcode: String
+    }
+
+    struct Token: Codable {
+        let token: String
     }
 }

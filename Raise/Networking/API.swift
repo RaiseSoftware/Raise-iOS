@@ -16,9 +16,8 @@ class API {
         }
         return url
     }()
-    
 
-    static func createGame(_ request: CreateRequest, completion: @escaping (CreateResponse?) -> Void) {
+    static func createGame(_ request: CreateRequest, completion: @escaping (GameResponse?) -> Void) {
         var urlRequest = URLRequest(url: host.appendingPathComponent("poker-game"))
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -32,8 +31,8 @@ class API {
                 }
 
                 do {
-                    let createResponse = try JSONDecoder().decode(CreateResponse.self, from: data)
-                    completion(createResponse)
+                    let gameResponse = try JSONDecoder().decode(GameResponse.self, from: data)
+                    completion(gameResponse)
                 } catch {
                     assertionFailure(error.localizedDescription)
                     completion(nil)
