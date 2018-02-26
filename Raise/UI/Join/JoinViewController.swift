@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class JoinViewController: UIViewController {
 
@@ -20,6 +21,24 @@ class JoinViewController: UIViewController {
 
     @IBAction func textFieldEditingChanged() {
         joinGameButton.isEnabled = userNameTextField.hasText && gameIDTextField.hasText
+    }
+
+    @IBAction func joinPressed() {
+        guard let gameId = gameIDTextField.text, let name = userNameTextField.text else {
+            assertionFailure("Missing game id or user name")
+            return
+        }
+
+        SVProgressHUD.show()
+        API.findGame(gameId, name: name, passcode: nil) { [weak self] response in
+            SVProgressHUD.dismiss()
+            if let response = response, let gameDetailsViewController = UIStoryboard(name: "GameDetails", bundle: nil).instantiateInitialViewController() as? GameDetailsViewController {
+                gameDetailsViewController.gameResponse = response
+                self?.navigationController?.pushViewController(gameDetailsViewController, animated: true)
+            } else {
+                self?.presentErrorAlert(message: "Unable to join game. Please verify code and try again.")
+            }
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

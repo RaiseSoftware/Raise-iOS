@@ -34,10 +34,48 @@ class API {
                     let gameResponse = try JSONDecoder().decode(GameResponse.self, from: data)
                     completion(gameResponse)
                 } catch {
-                    assertionFailure(error.localizedDescription)
                     completion(nil)
                 }
             }
         }.resume()
+    }
+
+    static func findGame(_ gameId: String, name: String, passcode: String?, completion: @escaping (GameResponse?) -> Void) {
+        guard var urlComponents = URLComponents(url: host.appendingPathComponent("poker-game/\(gameId)"), resolvingAgainstBaseURL: true) else {
+            completion(nil)
+            assertionFailure("Invalid url")
+            return
+        }
+
+        if let passcode = passcode {
+            urlComponents.query = "name=\(name)&passcode=\(passcode)"
+        } else {
+            urlComponents.query = "name=\(name)"
+        }
+
+        guard let url = urlComponents.url else {
+            completion(nil)
+            assertionFailure("Invalid url from url components")
+            return
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+
+        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            DispatchQueue.main.async {
+                guard let data = data else {
+                    completion(nil)
+                    return
+                }
+
+                do {
+                    let gameResponse = try JSONDecoder().decode(GameResponse.self, from: data)
+                    completion(gameResponse)
+                } catch {
+                    completion(nil)
+                }
+            }
+            }.resume()
     }
 }
