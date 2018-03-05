@@ -18,18 +18,20 @@ class GameDetailsViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var playerTableView: UITableView!
 
+    @IBOutlet weak var startGameButton: UIButton!
+
     var gameResponse: GameResponse!
-    var players = [Player]()
+    var players = [Player]() {
+        didSet {
+            startGameButton.isEnabled = players.count > 1
+            playerTableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Socket.shared.connect(token: gameResponse.token.token)
-
-        Socket.shared.playersUpdated = { [weak self] players in
-            self?.players = players
-            self?.playerTableView.reloadData()
-        }
+        configureSocket()
 
         gameIDLabel.text = "Game ID: \(gameResponse.pokerGame.gameId)"
 
@@ -47,6 +49,18 @@ class GameDetailsViewController: UIViewController {
         }
     }
 
+    func configureSocket() {
+        Socket.shared.connect(token: gameResponse.token.token)
+
+        Socket.shared.playersUpdated = { [weak self] players in
+            self?.players = players
+        }
+
+        Socket.shared.startGame = { [weak self] in
+            self?.performSegue(withIdentifier: "startGame", sender: nil)
+        }
+    }
+
     @IBAction func qrCodeTapped() {
         guard let qrCodeImage = qrCodeButton.image(for: .normal) else {
             assertionFailure("Unable to get QR code")
@@ -55,6 +69,10 @@ class GameDetailsViewController: UIViewController {
 
         let activityViewController = UIActivityViewController(activityItems: [qrCodeImage], applicationActivities: nil)
         present(activityViewController, animated: true)
+    }
+
+    @IBAction func startGameButtonPressed() {
+        Socket.shared.send(.startGame)
     }
 }
 

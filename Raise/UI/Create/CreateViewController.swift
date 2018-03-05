@@ -26,6 +26,8 @@ class CreateViewController: UIViewController {
     }
 
     @IBAction func createGameButtonPressed() {
+        dismissKeyboard()
+
         guard let gameName = gameNameTextField.text, let moderatorName = userNameTextField.text else {
             assertionFailure("Missing game or user name")
             return

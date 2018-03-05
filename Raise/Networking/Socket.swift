@@ -17,6 +17,14 @@ class Socket {
     var socket: SocketIOClient?
 
     var playersUpdated: (([Player]) -> Void)?
+    var startGame: (() -> Void)?
+
+    enum Event: String {
+        case joinLeaveGame = "join-leave-game"
+        case cardSubmit = "card-submit"
+        case startGame = "start-game"
+        case endGame = "end-game"
+    }
 
     private let url: URL = {
         guard let url = URL(string: "https://raise.cameronvwilliams.com") else {
@@ -43,7 +51,7 @@ class Socket {
             print("Got event: \($0.event) with items: \($0.items ?? [])")
         }
 
-        socket?.on("join-leave-game") { [weak self] items, _ in
+        socket?.on(Event.joinLeaveGame.rawValue) { [weak self] items, _ in
             for item in items {
                 guard let jsonString = item as? String, let data = jsonString.data(using: .utf8) else {
                     assertionFailure("Invalid json")
@@ -59,17 +67,21 @@ class Socket {
             }
         }
 
-        socket?.on("card-submit") { _, _ in
+        socket?.on(Event.cardSubmit.rawValue) { _, _ in
             print("card-submit")
         }
 
-        socket?.on("start-game") { _, _ in
-            print("start-game")
+        socket?.on(Event.startGame.rawValue) { [weak self] _, _ in
+            self?.startGame?()
         }
 
-        socket?.on("end-game") { _, _ in
+        socket?.on(Event.endGame.rawValue) { _, _ in
             print("end-game")
         }
+    }
+
+    func send(_ event: Event) {
+        socket?.emit(event.rawValue)
     }
 
     func disconnect() {

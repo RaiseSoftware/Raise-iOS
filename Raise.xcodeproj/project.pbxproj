@@ -18,6 +18,8 @@
 		9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A05B612202148C8006F6428 /* LaunchScreen.storyboard */; };
 		9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A156E2E203B3958003EA982 /* JoinViewController.swift */; };
 		9A1C54112041D94500EAF4ED /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C54102041D94500EAF4ED /* Socket.swift */; };
+		9A38940F204CE63B0049DC4D /* PokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38940E204CE63B0049DC4D /* PokerViewController.swift */; };
+		9A389411204CE6420049DC4D /* Poker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A389410204CE6420049DC4D /* Poker.storyboard */; };
 		9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */; };
 		9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE0203CE76C006E08D2 /* API.swift */; };
 		9A4E9DE4203CE99D006E08D2 /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */; };
@@ -46,6 +48,8 @@
 		9A05B615202148C8006F6428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A156E2E203B3958003EA982 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		9A1C54102041D94500EAF4ED /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		9A38940E204CE63B0049DC4D /* PokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerViewController.swift; sourceTree = "<group>"; };
+		9A389410204CE6420049DC4D /* Poker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Poker.storyboard; sourceTree = "<group>"; };
 		9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
 		9A4E9DE0203CE76C006E08D2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				9A4E9DEC203CF59E006E08D2 /* Game Details */,
 				9A009E59202649DA00F0A4C6 /* Intro */,
 				9A009E672026614800F0A4C6 /* Join */,
+				9A38940D204CE6120049DC4D /* Poker */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -149,6 +154,15 @@
 				9A8994A820214E3700D147A9 /* Supporting Files */,
 			);
 			path = Raise;
+			sourceTree = "<group>";
+		};
+		9A38940D204CE6120049DC4D /* Poker */ = {
+			isa = PBXGroup;
+			children = (
+				9A389410204CE6420049DC4D /* Poker.storyboard */,
+				9A38940E204CE63B0049DC4D /* PokerViewController.swift */,
+			);
+			path = Poker;
 			sourceTree = "<group>";
 		};
 		9A4E9DDC203CE5F6006E08D2 /* Networking */ = {
@@ -297,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A389411204CE6420049DC4D /* Poker.storyboard in Resources */,
 				9A009E692026615800F0A4C6 /* Join.storyboard in Resources */,
 				9A009E6420265E2300F0A4C6 /* Create.storyboard in Resources */,
 				9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */,
@@ -381,6 +396,7 @@
 				9A4E9DEB203CF45D006E08D2 /* UIViewControllerExtensions.swift in Sources */,
 				9A4E9DF0203D011D006E08D2 /* GameDetailsViewController.swift in Sources */,
 				9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */,
+				9A38940F204CE63B0049DC4D /* PokerViewController.swift in Sources */,
 				9A8016CA204CDE3A0021DAD2 /* JoinLeaveGameResponse.swift in Sources */,
 				9A009E6B202667F700F0A4C6 /* CreateViewController.swift in Sources */,
 				9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */,

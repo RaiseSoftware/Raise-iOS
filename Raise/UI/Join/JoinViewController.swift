@@ -24,6 +24,8 @@ class JoinViewController: UIViewController {
     }
 
     @IBAction func joinPressed() {
+        dismissKeyboard()
+        
         guard let gameId = gameIDTextField.text, let name = userNameTextField.text else {
             assertionFailure("Missing game id or user name")
             return

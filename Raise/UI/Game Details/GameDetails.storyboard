@@ -32,6 +32,9 @@
                                 <state key="disabled">
                                     <color key="titleColor" white="0.0" alpha="0.30059396399999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startGameButtonPressed" destination="goU-JZ-3yI" eventType="touchUpInside" id="F1w-yh-Ow7"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGy-lD-mdd">
                                 <rect key="frame" x="0.0" y="20" width="375" height="582"/>
@@ -196,11 +199,21 @@ Tap to share.</string>
                         <outlet property="passcodeLabel" destination="F8x-9P-uwh" id="Nl1-Yl-hVE"/>
                         <outlet property="playerTableView" destination="2Y9-R3-VWp" id="QME-Mp-RBU"/>
                         <outlet property="qrCodeButton" destination="S5n-xO-Xu5" id="EF2-r1-tlY"/>
+                        <outlet property="startGameButton" destination="bk0-tj-Yke" id="5Yn-ad-VA4"/>
+                        <segue destination="nZj-FN-TPM" kind="show" identifier="startGame" id="0Oy-HU-8MS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f20-2R-xS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="348" y="59.820089955022496"/>
+        </scene>
+        <!--Poker-->
+        <scene sceneID="kVi-3v-Xf1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Poker" id="nZj-FN-TPM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NtG-99-vFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="59"/>
         </scene>
     </scenes>
 </document>
