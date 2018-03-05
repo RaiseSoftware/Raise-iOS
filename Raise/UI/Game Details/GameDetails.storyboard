@@ -194,6 +194,7 @@ Tap to share.</string>
                         <outlet property="gameIDLabel" destination="gUh-KW-pcD" id="yrN-Rv-xRu"/>
                         <outlet property="pageControl" destination="XAy-jd-uha" id="RP9-WF-vVY"/>
                         <outlet property="passcodeLabel" destination="F8x-9P-uwh" id="Nl1-Yl-hVE"/>
+                        <outlet property="playerTableView" destination="2Y9-R3-VWp" id="QME-Mp-RBU"/>
                         <outlet property="qrCodeButton" destination="S5n-xO-Xu5" id="EF2-r1-tlY"/>
                     </connections>
                 </viewController>

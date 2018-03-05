@@ -12,4 +12,14 @@ class PlayerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var initialLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+
+    func setUp(with player: Player) {
+        if let firstInitial = player.name.first {
+            initialLabel.text = String(firstInitial)
+        } else {
+            initialLabel.text = nil
+        }
+
+        nameLabel.text = player.name
+    }
 }

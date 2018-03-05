@@ -16,6 +16,8 @@ class Socket {
     var manager: SocketManager?
     var socket: SocketIOClient?
 
+    var playersUpdated: (([Player]) -> Void)?
+
     private let url: URL = {
         guard let url = URL(string: "https://raise.cameronvwilliams.com") else {
             fatalError("Url must be valid")
@@ -41,8 +43,20 @@ class Socket {
             print("Got event: \($0.event) with items: \($0.items ?? [])")
         }
 
-        socket?.on("join-leave-game") { _, _ in
-            print("join-leave-game")
+        socket?.on("join-leave-game") { [weak self] items, _ in
+            for item in items {
+                guard let jsonString = item as? String, let data = jsonString.data(using: .utf8) else {
+                    assertionFailure("Invalid json")
+                    continue
+                }
+
+                do {
+                    let response = try JSONDecoder().decode(JoinLeaveGameResponse.self, from: data)
+                    self?.playersUpdated?(response.players)
+                } catch {
+                    assertionFailure(error.localizedDescription)
+                }
+            }
         }
 
         socket?.on("card-submit") { _, _ in

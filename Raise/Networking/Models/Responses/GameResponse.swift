@@ -14,12 +14,14 @@ struct GameResponse: Codable {
     let token: Token
 
     struct PokerGame: Codable {
+
         let gameId: String
         let passcode: String?
         let qrcode: String
     }
 
     struct Token: Codable {
+
         let token: String
     }
 }

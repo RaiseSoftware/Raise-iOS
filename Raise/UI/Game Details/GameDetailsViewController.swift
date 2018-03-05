@@ -16,11 +16,20 @@ class GameDetailsViewController: UIViewController {
 
     @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var playerTableView: UITableView!
 
     var gameResponse: GameResponse!
+    var players = [Player]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        Socket.shared.connect(token: gameResponse.token.token)
+
+        Socket.shared.playersUpdated = { [weak self] players in
+            self?.players = players
+            self?.playerTableView.reloadData()
+        }
 
         gameIDLabel.text = "Game ID: \(gameResponse.pokerGame.gameId)"
 
@@ -67,10 +76,16 @@ extension GameDetailsViewController: UIScrollViewDelegate {
 extension GameDetailsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: String(describing: PlayerTableViewCell.self), for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlayerTableViewCell.self), for: indexPath) as? PlayerTableViewCell else {
+            assertionFailure("Unable to find PlayerTableViewCell")
+            return UITableViewCell()
+        }
+
+        cell.setUp(with: players[indexPath.row])
+        return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return players.count
     }
 }
