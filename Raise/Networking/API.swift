@@ -40,9 +40,11 @@ class API {
         }.resume()
     }
 
-    static func findGame(_ gameId: String, name: String, passcode: String?, completion: @escaping (GameResponse?) -> Void) {
+    // Success returns a game response
+    // Failure returns error + a bool as to whether the failure was because a password was needed
+    static func findGame(_ gameId: String, name: String, passcode: String?, success: @escaping (GameResponse) -> Void, failure: @escaping (Error?, Bool) -> Void) {
         guard var urlComponents = URLComponents(url: host.appendingPathComponent("poker-game/\(gameId)"), resolvingAgainstBaseURL: true) else {
-            completion(nil)
+            failure(nil, false)
             assertionFailure("Invalid url")
             return
         }
@@ -54,7 +56,7 @@ class API {
         }
 
         guard let url = urlComponents.url else {
-            completion(nil)
+            failure(nil, false)
             assertionFailure("Invalid url from url components")
             return
         }
@@ -65,15 +67,19 @@ class API {
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data else {
-                    completion(nil)
+                    failure(nil, false)
                     return
                 }
 
                 do {
                     let gameResponse = try JSONDecoder().decode(GameResponse.self, from: data)
-                    completion(gameResponse)
+                    success(gameResponse)
                 } catch {
-                    completion(nil)
+                    if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 403 {
+                        failure(error, true)
+                    } else {
+                        failure(error, false)
+                    }
                 }
             }
             }.resume()

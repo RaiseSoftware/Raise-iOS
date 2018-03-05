@@ -25,22 +25,53 @@ class JoinViewController: UIViewController {
 
     @IBAction func joinPressed() {
         dismissKeyboard()
-        
+
+        makeAPIRequest()
+    }
+
+    func makeAPIRequest(passcode: String? = nil) {
         guard let gameId = gameIDTextField.text, let name = userNameTextField.text else {
             assertionFailure("Missing game id or user name")
             return
         }
-
+        
         SVProgressHUD.show()
-        API.findGame(gameId, name: name, passcode: nil) { [weak self] response in
+        API.findGame(gameId, name: name, passcode: passcode, success: { [weak self] response in
             SVProgressHUD.dismiss()
-            if let response = response, let gameDetailsViewController = UIStoryboard(name: "GameDetails", bundle: nil).instantiateInitialViewController() as? GameDetailsViewController {
+            if let gameDetailsViewController = UIStoryboard(name: "GameDetails", bundle: nil).instantiateInitialViewController() as? GameDetailsViewController {
                 gameDetailsViewController.gameResponse = response
                 self?.navigationController?.pushViewController(gameDetailsViewController, animated: true)
             } else {
                 self?.presentErrorAlert(message: "Unable to join game. Please verify code and try again.")
             }
+        }, failure: { [weak self] error, needsPassword in
+            SVProgressHUD.dismiss()
+            if needsPassword {
+                self?.promptForPassword()
+            } else {
+                self?.presentErrorAlert(message: "Unable to join game. Please verify code and try again.")
+            }
+        })
+    }
+
+    func promptForPassword() {
+        let alertController = UIAlertController(title: "Enter Passcode", message: nil, preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.autocorrectionType = .no
+            textField.autocapitalizationType = .allCharacters
         }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self] _ in
+            if let passcode = alertController.textFields?.first?.text {
+                self?.makeAPIRequest(passcode: passcode)
+            }
+        }
+
+        alertController.addAction(cancelAction)
+        alertController.addAction(submitAction)
+
+        present(alertController, animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
