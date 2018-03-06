@@ -23,7 +23,7 @@ class GameDetailsViewController: UIViewController {
     var gameResponse: GameResponse!
     var players = [Player]() {
         didSet {
-            startGameButton.isEnabled = players.count > 1
+            startGameButton.isEnabled = players.count > 0
             playerTableView.reloadData()
         }
     }
