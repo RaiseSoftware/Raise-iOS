@@ -13,10 +13,11 @@ class PokerViewController: UIViewController {
     @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
 
-    @IBOutlet weak var cardCollectionView: UICollectionView!
+    @IBOutlet weak var selectedImageView: UIImageView!
+
     @IBOutlet weak var playerTableView: UITableView!
 
-    let cardImages = [#imageLiteral(resourceName: "Card-0"), #imageLiteral(resourceName: "Card-Half"), #imageLiteral(resourceName: "Card-1"), #imageLiteral(resourceName: "Card-2"), #imageLiteral(resourceName: "Card-3"), #imageLiteral(resourceName: "Card-5"), #imageLiteral(resourceName: "Card-8"), #imageLiteral(resourceName: "Card-13"), #imageLiteral(resourceName: "Card-20"), #imageLiteral(resourceName: "Card-40"), #imageLiteral(resourceName: "Card-100"), #imageLiteral(resourceName: "Card-Infinity")]
+    let cardImages = [#imageLiteral(resourceName: "Card-0"), #imageLiteral(resourceName: "Card-Half"), #imageLiteral(resourceName: "Card-1"), #imageLiteral(resourceName: "Card-2"), #imageLiteral(resourceName: "Card-3"), #imageLiteral(resourceName: "Card-5"), #imageLiteral(resourceName: "Card-8"), #imageLiteral(resourceName: "Card-13"), #imageLiteral(resourceName: "Card-20"), #imageLiteral(resourceName: "Card-40"), #imageLiteral(resourceName: "Card-100"), #imageLiteral(resourceName: "Card-Infinity"), #imageLiteral(resourceName: "Card-Question"), #imageLiteral(resourceName: "Card-Coffee")]
 
     var players = [Player]()
 }
@@ -68,5 +69,13 @@ extension PokerViewController: UICollectionViewDataSource {
         cell.cardImageView.image = cardImages[indexPath.item]
 
         return cell
+    }
+}
+
+extension PokerViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let image = cardImages[indexPath.item]
+        selectedImageView.image = image
     }
 }

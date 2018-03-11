@@ -119,16 +119,23 @@
                                             <outlet property="delegate" destination="fje-aJ-Fpr" id="IP7-eB-Cey"/>
                                         </connections>
                                     </tableView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uer-ZC-CET">
+                                        <rect key="frame" x="40" y="40" width="295" height="387"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="gZU-U6-pKL" secondAttribute="bottom" id="4HA-Oa-e3H"/>
                                     <constraint firstItem="gZU-U6-pKL" firstAttribute="height" secondItem="OWj-RQ-e46" secondAttribute="height" id="4g3-KI-aCA"/>
+                                    <constraint firstItem="Uer-ZC-CET" firstAttribute="top" secondItem="OWj-RQ-e46" secondAttribute="top" constant="40" id="Dgh-5h-uk7"/>
                                     <constraint firstItem="gZU-U6-pKL" firstAttribute="width" secondItem="OWj-RQ-e46" secondAttribute="width" id="EnZ-xN-dyb"/>
+                                    <constraint firstItem="Uer-ZC-CET" firstAttribute="leading" secondItem="OWj-RQ-e46" secondAttribute="leading" constant="40" id="FZO-Lj-aHx"/>
                                     <constraint firstItem="fcJ-KE-8Yc" firstAttribute="leading" secondItem="OWj-RQ-e46" secondAttribute="leading" id="OJI-d3-IW5"/>
                                     <constraint firstItem="gZU-U6-pKL" firstAttribute="top" secondItem="OWj-RQ-e46" secondAttribute="top" id="V5V-qS-HjB"/>
                                     <constraint firstAttribute="bottom" secondItem="fcJ-KE-8Yc" secondAttribute="bottom" constant="50" id="X3c-oI-UvT"/>
                                     <constraint firstAttribute="trailing" secondItem="gZU-U6-pKL" secondAttribute="trailing" id="X6c-eL-7RN"/>
                                     <constraint firstItem="gZU-U6-pKL" firstAttribute="leading" secondItem="fcJ-KE-8Yc" secondAttribute="trailing" id="XT5-0D-kLW"/>
+                                    <constraint firstItem="gZU-U6-pKL" firstAttribute="leading" secondItem="Uer-ZC-CET" secondAttribute="trailing" constant="40" id="aQO-X9-eJz"/>
+                                    <constraint firstItem="fcJ-KE-8Yc" firstAttribute="top" secondItem="Uer-ZC-CET" secondAttribute="bottom" constant="60" id="bbV-7B-Qcw"/>
                                     <constraint firstItem="fcJ-KE-8Yc" firstAttribute="width" secondItem="OWj-RQ-e46" secondAttribute="width" id="l1l-Dh-Q6W"/>
                                 </constraints>
                                 <connections>
@@ -157,6 +164,7 @@
                         <outlet property="containerScrollView" destination="OWj-RQ-e46" id="LcP-lq-10y"/>
                         <outlet property="pageControl" destination="0mQ-JI-TQq" id="ozv-fS-PY8"/>
                         <outlet property="playerTableView" destination="gZU-U6-pKL" id="QHN-MI-EMa"/>
+                        <outlet property="selectedImageView" destination="Uer-ZC-CET" id="6Lc-NC-ZLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sg-ng-IJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
