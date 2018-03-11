@@ -9,8 +9,8 @@ PODS:
     - AppCenter/Core
   - AppCenter/Distribute (1.5.0):
     - AppCenter/Core
-  - IQKeyboardManagerSwift (5.0.7)
-  - Socket.IO-Client-Swift (13.1.1):
+  - IQKeyboardManagerSwift (5.0.8)
+  - Socket.IO-Client-Swift (13.1.2):
     - Starscream (~> 3.0.2)
   - Starscream (3.0.4)
   - SVProgressHUD (2.2.5)
@@ -24,8 +24,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AppCenter: 42c293f0de27e173aacd600a55a49da5317cd40e
-  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
-  Socket.IO-Client-Swift: f22222913f29801e30ae0df712db663ec096edc2
+  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  Socket.IO-Client-Swift: 010d2f464bdd1849b859c0cd0500d68194401ac8
   Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
