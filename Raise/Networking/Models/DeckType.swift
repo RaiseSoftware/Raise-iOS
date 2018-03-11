@@ -9,6 +9,6 @@
 import Foundation
 
 enum DeckType: String, Codable {
-    case fibonacci
-    case tshirt = "t-shirt"
+    case fibonacci = "FIBONACCI"
+    case tshirt = "T-SHIRT"
 }

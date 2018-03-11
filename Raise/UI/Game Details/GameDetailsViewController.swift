@@ -35,7 +35,7 @@ class GameDetailsViewController: UIViewController {
 
         gameIDLabel.text = "Game ID: \(gameResponse.pokerGame.gameId)"
 
-        if let passcode = gameResponse.pokerGame.passcode {
+        if let passcode = gameResponse.pokerGame.passcode, !passcode.isEmpty {
             passcodeLabel.isHidden = false
             passcodeLabel.text = "Passcode: \(passcode)"
         } else {

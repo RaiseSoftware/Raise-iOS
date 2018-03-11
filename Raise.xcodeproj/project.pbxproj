@@ -32,6 +32,8 @@
 		9A8016CA204CDE3A0021DAD2 /* JoinLeaveGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8016C9204CDE3A0021DAD2 /* JoinLeaveGameResponse.swift */; };
 		9A8FECAB203F8B6F007CC898 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FECAA203F8B6F007CC898 /* QRCodeScannerViewController.swift */; };
 		9A8FECAD203F953C007CC898 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FECAC203F953C007CC898 /* StringExtensions.swift */; };
+		9A98793F2055EBAC00138AE1 /* PokerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98793E2055EBAC00138AE1 /* PokerGame.swift */; };
+		9A9879412055EBB200138AE1 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9879402055EBB200138AE1 /* Token.swift */; };
 		9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA77DBB203E4CC5003BDDC9 /* PlayerTableViewCell.swift */; };
 		9ABED681204CE06100174C33 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABED680204CE06100174C33 /* Player.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		9A8016C9204CDE3A0021DAD2 /* JoinLeaveGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinLeaveGameResponse.swift; sourceTree = "<group>"; };
 		9A8FECAA203F8B6F007CC898 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		9A8FECAC203F953C007CC898 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		9A98793E2055EBAC00138AE1 /* PokerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerGame.swift; sourceTree = "<group>"; };
+		9A9879402055EBB200138AE1 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		9AA77DBB203E4CC5003BDDC9 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		9ABED680204CE06100174C33 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A653B240EA992B97D6E99B1E /* Pods-Raise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Raise/Pods-Raise.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 			children = (
 				9A4E9DE5203CE9D4006E08D2 /* DeckType.swift */,
 				9ABED680204CE06100174C33 /* Player.swift */,
+				9A98793E2055EBAC00138AE1 /* PokerGame.swift */,
+				9A9879402055EBB200138AE1 /* Token.swift */,
 				9A4E9DDD203CE61D006E08D2 /* Requests */,
 				9A4E9DE2203CE8D9006E08D2 /* Responses */,
 			);
@@ -409,10 +415,12 @@
 				9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */,
 				9A4E9DE4203CE99D006E08D2 /* GameResponse.swift in Sources */,
 				9A1C54112041D94500EAF4ED /* Socket.swift in Sources */,
+				9A9879412055EBB200138AE1 /* Token.swift in Sources */,
 				9A8FECAB203F8B6F007CC898 /* QRCodeScannerViewController.swift in Sources */,
 				9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */,
 				9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */,
 				9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */,
+				9A98793F2055EBAC00138AE1 /* PokerGame.swift in Sources */,
 				9ABED681204CE06100174C33 /* Player.swift in Sources */,
 				9A0C466C204E2AA10003E4CE /* CardCollectionViewCell.swift in Sources */,
 				9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */,
