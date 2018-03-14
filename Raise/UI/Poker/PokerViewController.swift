@@ -24,17 +24,13 @@ class PokerViewController: UIViewController {
     }
 
     var pokerGame: PokerGame!
-    var cardImages = [UIImage]()
+    var cards = [Card]()
     var selectedCardIndex = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if pokerGame.deckType == .fibonacci {
-            cardImages = [#imageLiteral(resourceName: "Card-0"), #imageLiteral(resourceName: "Card-Half"), #imageLiteral(resourceName: "Card-1"), #imageLiteral(resourceName: "Card-2"), #imageLiteral(resourceName: "Card-3"), #imageLiteral(resourceName: "Card-5"), #imageLiteral(resourceName: "Card-8"), #imageLiteral(resourceName: "Card-13"), #imageLiteral(resourceName: "Card-20"), #imageLiteral(resourceName: "Card-40"), #imageLiteral(resourceName: "Card-100"), #imageLiteral(resourceName: "Card-Infinity"), #imageLiteral(resourceName: "Card-Question"), #imageLiteral(resourceName: "Card-Coffee")]
-        } else {
-            cardImages = [#imageLiteral(resourceName: "Card-Question"), #imageLiteral(resourceName: "Card-Coffee")]
-        }
+        cards = pokerGame.deckType.cards
 
         Socket.shared.activeCardsUpdated = { [weak self] activeCards in
             self?.activeCards = activeCards
@@ -77,7 +73,7 @@ extension PokerViewController: UITableViewDataSource {
 extension PokerViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cardImages.count
+        return cards.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,7 +82,7 @@ extension PokerViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        cell.cardImageView.image = cardImages[indexPath.item]
+        cell.cardImageView.image = cards[indexPath.item].value.image
         cell.cardImageView.alpha = selectedCardIndex == indexPath.item ? 0.5 : 1.0
 
         return cell
@@ -96,8 +92,8 @@ extension PokerViewController: UICollectionViewDataSource {
 extension PokerViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let image = cardImages[indexPath.item]
-        selectedImageView.image = image
+        let card = cards[indexPath.item]
+        selectedImageView.image = card.value.image
         selectedCardIndex = indexPath.item
         collectionView.reloadData()
     }

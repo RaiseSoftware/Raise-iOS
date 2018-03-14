@@ -20,6 +20,7 @@
 		9A156E2F203B3958003EA982 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A156E2E203B3958003EA982 /* JoinViewController.swift */; };
 		9A1C54112041D94500EAF4ED /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C54102041D94500EAF4ED /* Socket.swift */; };
 		9A2BC92B2058AC7C0033BD3A /* ActiveCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BC92A2058AC7C0033BD3A /* ActiveCardTableViewCell.swift */; };
+		9A2BC92D2058B0B50033BD3A /* CardSubmitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BC92C2058B0B50033BD3A /* CardSubmitRequest.swift */; };
 		9A38940F204CE63B0049DC4D /* PokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38940E204CE63B0049DC4D /* PokerViewController.swift */; };
 		9A389411204CE6420049DC4D /* Poker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A389410204CE6420049DC4D /* Poker.storyboard */; };
 		9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */; };
@@ -58,6 +59,7 @@
 		9A156E2E203B3958003EA982 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		9A1C54102041D94500EAF4ED /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		9A2BC92A2058AC7C0033BD3A /* ActiveCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveCardTableViewCell.swift; sourceTree = "<group>"; };
+		9A2BC92C2058B0B50033BD3A /* CardSubmitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSubmitRequest.swift; sourceTree = "<group>"; };
 		9A38940E204CE63B0049DC4D /* PokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerViewController.swift; sourceTree = "<group>"; };
 		9A389410204CE6420049DC4D /* Poker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Poker.storyboard; sourceTree = "<group>"; };
 		9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */,
+				9A2BC92C2058B0B50033BD3A /* CardSubmitRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				9A4E9DE4203CE99D006E08D2 /* GameResponse.swift in Sources */,
 				9A1C54112041D94500EAF4ED /* Socket.swift in Sources */,
 				9A9879412055EBB200138AE1 /* Token.swift in Sources */,
+				9A2BC92D2058B0B50033BD3A /* CardSubmitRequest.swift in Sources */,
 				9A8FECAB203F8B6F007CC898 /* QRCodeScannerViewController.swift in Sources */,
 				9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */,
 				9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */,
