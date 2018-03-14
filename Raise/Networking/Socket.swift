@@ -17,6 +17,7 @@ class Socket {
     var socket: SocketIOClient?
 
     var playersUpdated: (([Player]) -> Void)?
+    var activeCardsUpdated: (([ActiveCard]) -> Void)?
     var startGame: (() -> Void)?
 
     enum Event: String {
@@ -67,8 +68,20 @@ class Socket {
             }
         }
 
-        socket?.on(Event.cardSubmit.rawValue) { _, _ in
-            print("card-submit")
+        socket?.on(Event.cardSubmit.rawValue) { [weak self] items, _ in
+            for item in items {
+                guard let jsonString = item as? String, let data = jsonString.data(using: .utf8) else {
+                    assertionFailure("Invalid json")
+                    continue
+                }
+
+                do {
+                    let response = try JSONDecoder().decode(CardSubmitResponse.self, from: data)
+                    self?.activeCardsUpdated?(response.activeCards)
+                } catch {
+                    assertionFailure(error.localizedDescription)
+                }
+            }
         }
 
         socket?.on(Event.startGame.rawValue) { [weak self] _, _ in
@@ -80,8 +93,12 @@ class Socket {
         }
     }
 
-    func send(_ event: Event) {
-        socket?.emit(event.rawValue)
+    func send(_ event: Event, data: [String: Any]? = nil) {
+        if let data = data {
+            socket?.emit(event.rawValue, data)
+        } else {
+            socket?.emit(event.rawValue)
+        }
     }
 
     func disconnect() {

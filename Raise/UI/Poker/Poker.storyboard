@@ -68,7 +68,7 @@
                                         <rect key="frame" x="375" y="0.0" width="375" height="647"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PokerPlayerTableViewCell" rowHeight="80" id="WzQ-Yu-upn" customClass="PokerPlayerTableViewCell" customModule="Raise" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActiveCardTableViewCell" rowHeight="80" id="WzQ-Yu-upn" customClass="ActiveCardTableViewCell" customModule="Raise" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WzQ-Yu-upn" id="SeA-Z9-i0x">
@@ -97,18 +97,28 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WhP-6M-w03">
+                                                            <rect key="frame" x="310" y="5" width="50" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="jpW-jy-Uzj"/>
+                                                                <constraint firstAttribute="height" constant="70" id="uEf-Eq-bBI"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="WhP-6M-w03" firstAttribute="centerY" secondItem="SeA-Z9-i0x" secondAttribute="centerY" id="8Ys-iH-aQI"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="Hfv-WT-5YS" secondAttribute="bottom" id="XKi-x8-f64"/>
                                                         <constraint firstItem="Hfv-WT-5YS" firstAttribute="top" secondItem="SeA-Z9-i0x" secondAttribute="topMargin" id="Zvj-L1-nPc"/>
                                                         <constraint firstItem="tBT-Pf-E8Q" firstAttribute="centerY" secondItem="SeA-Z9-i0x" secondAttribute="centerY" id="h0g-wQ-EwQ"/>
                                                         <constraint firstItem="tBT-Pf-E8Q" firstAttribute="leading" secondItem="SeA-Z9-i0x" secondAttribute="leadingMargin" id="hMf-Mc-Av4"/>
                                                         <constraint firstItem="Hfv-WT-5YS" firstAttribute="leading" secondItem="tBT-Pf-E8Q" secondAttribute="trailing" constant="10" id="lbo-ip-Cxq"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="WhP-6M-w03" secondAttribute="trailing" id="prO-87-seR"/>
                                                         <constraint firstItem="Hfv-WT-5YS" firstAttribute="trailing" secondItem="SeA-Z9-i0x" secondAttribute="trailingMargin" id="uUG-V7-y8S"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <outlet property="cardImageView" destination="WhP-6M-w03" id="xX0-yM-ywb"/>
                                                     <outlet property="initialLabel" destination="tBT-Pf-E8Q" id="f6O-Dv-7y3"/>
                                                     <outlet property="nameLabel" destination="Hfv-WT-5YS" id="3zT-ss-uLa"/>
                                                 </connections>
@@ -161,9 +171,9 @@
                         <viewLayoutGuide key="safeArea" id="Jdx-u2-FZ8"/>
                     </view>
                     <connections>
+                        <outlet property="activeCardTableView" destination="gZU-U6-pKL" id="keQ-cp-Qex"/>
                         <outlet property="containerScrollView" destination="OWj-RQ-e46" id="LcP-lq-10y"/>
                         <outlet property="pageControl" destination="0mQ-JI-TQq" id="ozv-fS-PY8"/>
-                        <outlet property="playerTableView" destination="gZU-U6-pKL" id="QHN-MI-EMa"/>
                         <outlet property="selectedImageView" destination="Uer-ZC-CET" id="6Lc-NC-ZLO"/>
                     </connections>
                 </viewController>

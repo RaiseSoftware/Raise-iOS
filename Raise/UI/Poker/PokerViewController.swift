@@ -15,9 +15,14 @@ class PokerViewController: UIViewController {
 
     @IBOutlet weak var selectedImageView: UIImageView!
 
-    @IBOutlet weak var playerTableView: UITableView!
+    @IBOutlet weak var activeCardTableView: UITableView!
 
-    var players = [Player]()
+    var activeCards = [ActiveCard]() {
+        didSet {
+            activeCardTableView.reloadData()
+        }
+    }
+
     var pokerGame: PokerGame!
     var cardImages = [UIImage]()
     var selectedCardIndex = -1
@@ -29,6 +34,10 @@ class PokerViewController: UIViewController {
             cardImages = [#imageLiteral(resourceName: "Card-0"), #imageLiteral(resourceName: "Card-Half"), #imageLiteral(resourceName: "Card-1"), #imageLiteral(resourceName: "Card-2"), #imageLiteral(resourceName: "Card-3"), #imageLiteral(resourceName: "Card-5"), #imageLiteral(resourceName: "Card-8"), #imageLiteral(resourceName: "Card-13"), #imageLiteral(resourceName: "Card-20"), #imageLiteral(resourceName: "Card-40"), #imageLiteral(resourceName: "Card-100"), #imageLiteral(resourceName: "Card-Infinity"), #imageLiteral(resourceName: "Card-Question"), #imageLiteral(resourceName: "Card-Coffee")]
         } else {
             cardImages = [#imageLiteral(resourceName: "Card-Question"), #imageLiteral(resourceName: "Card-Coffee")]
+        }
+
+        Socket.shared.activeCardsUpdated = { [weak self] activeCards in
+            self?.activeCards = activeCards
         }
     }
 }
@@ -51,17 +60,17 @@ extension PokerViewController: UIScrollViewDelegate {
 extension PokerViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PokerPlayerTableViewCell.self), for: indexPath) as? PokerPlayerTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ActiveCardTableViewCell.self), for: indexPath) as? ActiveCardTableViewCell else {
             assertionFailure("Unable to find PokerPlayerTableViewCell")
             return UITableViewCell()
         }
 
-        cell.setUp(with: players[indexPath.row])
+        cell.setUp(with: activeCards[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        return activeCards.count
     }
 }
 
