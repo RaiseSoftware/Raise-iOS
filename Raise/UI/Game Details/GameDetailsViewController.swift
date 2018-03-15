@@ -33,6 +33,8 @@ class GameDetailsViewController: UIViewController {
 
         configureSocket()
 
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(exitGamePressed))
+
         gameIDLabel.text = "Game ID: \(gameResponse.pokerGame.gameId)"
 
         if let passcode = gameResponse.pokerGame.passcode, !passcode.isEmpty {
@@ -73,6 +75,13 @@ class GameDetailsViewController: UIViewController {
 
     @IBAction func startGameButtonPressed() {
         Socket.shared.send(.startGame)
+    }
+
+    @objc func exitGamePressed() {
+        presentConfirmationAlert(title: "Exit Poker Game", message: "Are you sure you want to exit this game?") { [weak self] _ in
+            Socket.shared.disconnect()
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

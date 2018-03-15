@@ -30,10 +30,19 @@ class PokerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(exitGamePressed))
+
         cards = pokerGame.deckType.cards
 
         Socket.shared.activeCardsUpdated = { [weak self] activeCards in
             self?.activeCards = activeCards
+        }
+    }
+
+    @objc func exitGamePressed() {
+        presentConfirmationAlert(title: "Exit Poker Game", message: "Are you sure you want to exit this game?") { [weak self] _ in
+            Socket.shared.disconnect()
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
 }
