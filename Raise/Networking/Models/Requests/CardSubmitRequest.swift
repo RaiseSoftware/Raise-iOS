@@ -6,10 +6,14 @@
 //  Copyright © 2018 Raise Software. All rights reserved.
 //
 
-import Foundation
+import SocketIO
 
-struct CardSubmitRequest: Codable {
+struct CardSubmitRequest: SocketData {
 
     let type: DeckType
     let value: CardValue
+
+    func socketRepresentation() -> SocketData {
+        return ["type": type.rawValue, "value": value.rawValue]
+    }
 }

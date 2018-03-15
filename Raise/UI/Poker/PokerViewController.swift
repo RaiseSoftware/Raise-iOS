@@ -94,7 +94,13 @@ extension PokerViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let card = cards[indexPath.item]
         selectedImageView.image = card.value.image
-        selectedCardIndex = indexPath.item
-        collectionView.reloadData()
+
+        if selectedCardIndex != indexPath.item {
+            selectedCardIndex = indexPath.item
+
+            let cardSubmitRequest = CardSubmitRequest(type: pokerGame.deckType, value: card.value)
+            Socket.shared.send(.cardSubmit, data: cardSubmitRequest)
+            collectionView.reloadData()
+        }
     }
 }

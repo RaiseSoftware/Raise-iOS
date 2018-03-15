@@ -93,7 +93,7 @@ class Socket {
         }
     }
 
-    func send(_ event: Event, data: [String: Any]? = nil) {
+    func send(_ event: Event, data: SocketData? = nil) {
         if let data = data {
             socket?.emit(event.rawValue, data)
         } else {
