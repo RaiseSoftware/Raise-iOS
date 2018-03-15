@@ -39,15 +39,15 @@ enum CardValue: String, Codable {
     var image: UIImage {
         switch self {
         case .xSmall:
-            return #imageLiteral(resourceName: "Card-Question")
+            return #imageLiteral(resourceName: "Card-XS")
         case .small:
-            return #imageLiteral(resourceName: "Card-Question")
+            return #imageLiteral(resourceName: "Card-S")
         case .medium:
-            return #imageLiteral(resourceName: "Card-Question")
+            return #imageLiteral(resourceName: "Card-M")
         case .large:
-            return #imageLiteral(resourceName: "Card-Question")
+            return #imageLiteral(resourceName: "Card-L")
         case .xLarge:
-            return #imageLiteral(resourceName: "Card-Question")
+            return #imageLiteral(resourceName: "Card-XL")
         case .zero:
             return #imageLiteral(resourceName: "Card-0")
         case .oneHalf:
