@@ -12,29 +12,29 @@ import UIKit
 enum CardValue: String, Codable {
 
     // T-Shirt Sizes
-    case xSmall = "X_SMALL"
-    case small = "SMALL"
-    case medium = "MEDIUM"
-    case large = "LARGE"
-    case xLarge = "X_LARGE"
+    case xSmall = "XS"
+    case small = "S"
+    case medium = "M"
+    case large = "L"
+    case xLarge = "XL"
 
     // Fibonacci
-    case zero = "ZERO"
-    case oneHalf = "ONE_HALF"
-    case one = "ONE"
-    case two = "TWO"
-    case three = "THREE"
-    case five = "FIVE"
-    case eight = "EIGHT"
-    case thirteen = "THIRTEEN"
-    case twenty = "TWENTY"
-    case forty = "FORTY"
-    case oneHundred = "ONE_HUNDRED"
-    case infinity = "INFINITY"
+    case zero = "0"
+    case oneHalf = "1/2"
+    case one = "1"
+    case two = "2"
+    case three = "3"
+    case five = "5"
+    case eight = "8"
+    case thirteen = "13"
+    case twenty = "20"
+    case forty = "40"
+    case oneHundred = "100"
+    case infinity
 
     // Other
-    case questionMark = "QUESTION_MARK"
-    case coffee = "COFFEE"
+    case questionMark = "?"
+    case coffee
 
     var image: UIImage {
         switch self {

@@ -9,8 +9,8 @@
 import Foundation
 
 enum DeckType: String, Codable {
-    case fibonacci = "FIBONACCI"
-    case tshirt = "T-SHIRT"
+    case fibonacci
+    case tshirt = "t-shirt"
 
     var cards: [Card] {
         switch self {
