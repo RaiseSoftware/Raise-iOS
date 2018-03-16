@@ -15,6 +15,7 @@ class Socket {
 
     var manager: SocketManager?
     var socket: SocketIOClient?
+    var activeGame = false
 
     var playersUpdated: (([Player]) -> Void)?
     var activeCardsUpdated: (([ActiveCard]) -> Void)?
@@ -35,7 +36,24 @@ class Socket {
     }()
 
     private init() {
-        // Private init to force use of singleton
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: .UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToForeground), name: .UIApplicationWillEnterForeground, object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc func appMovedToBackground() {
+        if activeGame {
+            socket?.disconnect()
+        }
+    }
+
+    @objc func appMovedToForeground() {
+        if activeGame {
+            socket?.connect()
+        }
     }
 
     func connect(token: String) {
@@ -45,6 +63,7 @@ class Socket {
         socket = manager?.defaultSocket
         addHandlers()
         socket?.connect()
+        activeGame = true
     }
 
     func addHandlers() {
@@ -103,5 +122,6 @@ class Socket {
 
     func disconnect() {
         socket?.disconnect()
+        activeGame = false
     }
 }
