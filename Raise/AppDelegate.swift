@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
 
         SVProgressHUD.setDefaultMaskType(.black)
     }

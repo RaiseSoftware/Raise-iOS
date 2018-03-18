@@ -37,6 +37,8 @@
 		9A9879412055EBB200138AE1 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9879402055EBB200138AE1 /* Token.swift */; };
 		9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA77DBB203E4CC5003BDDC9 /* PlayerTableViewCell.swift */; };
 		9ABED681204CE06100174C33 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABED680204CE06100174C33 /* Player.swift */; };
+		9AC89E3B205EEF27007FAC64 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC89E3A205EEF27007FAC64 /* Settings.storyboard */; };
+		9AC89E3F205EF14E007FAC64 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC89E3E205EF14E007FAC64 /* SettingsViewController.swift */; };
 		9ACF699620588CFB0013AF9F /* CardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF699520588CFB0013AF9F /* CardValue.swift */; };
 		9ACF69982058A7CE0013AF9F /* CardSubmitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF69972058A7CE0013AF9F /* CardSubmitResponse.swift */; };
 		9ACF699A2058A81D0013AF9F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF69992058A81D0013AF9F /* Card.swift */; };
@@ -76,6 +78,8 @@
 		9A9879402055EBB200138AE1 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		9AA77DBB203E4CC5003BDDC9 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		9ABED680204CE06100174C33 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9AC89E3A205EEF27007FAC64 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9AC89E3E205EF14E007FAC64 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9ACF699520588CFB0013AF9F /* CardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValue.swift; sourceTree = "<group>"; };
 		9ACF69972058A7CE0013AF9F /* CardSubmitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSubmitResponse.swift; sourceTree = "<group>"; };
 		9ACF69992058A81D0013AF9F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				9A009E59202649DA00F0A4C6 /* Intro */,
 				9A009E672026614800F0A4C6 /* Join */,
 				9A38940D204CE6120049DC4D /* Poker */,
+				9AC89E39205EEF11007FAC64 /* Settings */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -268,6 +273,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9AC89E39205EEF11007FAC64 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9AC89E3A205EEF27007FAC64 /* Settings.storyboard */,
+				9AC89E3E205EF14E007FAC64 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		9E5960909ECBCCE9E1649522 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +358,7 @@
 				9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */,
 				9A4E9DEE203CF5AF006E08D2 /* GameDetails.storyboard in Resources */,
 				9A009E5F20264B2200F0A4C6 /* Variane Script.ttf in Resources */,
+				9AC89E3B205EEF27007FAC64 /* Settings.storyboard in Resources */,
 				9A05B611202148C8006F6428 /* Assets.xcassets in Resources */,
 				9A009E5B20264A7400F0A4C6 /* Intro.storyboard in Resources */,
 			);
@@ -444,6 +459,7 @@
 				9ABED681204CE06100174C33 /* Player.swift in Sources */,
 				9A0C466C204E2AA10003E4CE /* CardCollectionViewCell.swift in Sources */,
 				9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */,
+				9AC89E3F205EF14E007FAC64 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -87,11 +87,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5sc-mM-bGS"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Iy3-ej-uxm"/>
+                    <navigationItem key="navigationItem" id="Iy3-ej-uxm">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Pdl-sR-aXv">
+                            <connections>
+                                <segue destination="tbR-gl-8B3" kind="show" id="9RP-0T-c3Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3n-sH-9Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="-147.07646176911544"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="bKx-3M-C0T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="tbR-gl-8B3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bh3-Z4-eAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="-209"/>
         </scene>
         <!--Create-->
         <scene sceneID="MmU-5d-vbF">
@@ -99,7 +113,7 @@
                 <viewControllerPlaceholder storyboardName="Create" id="4iQ-5T-chU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Gi-nz-eW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="622" y="-170"/>
+            <point key="canvasLocation" x="622" y="-148"/>
         </scene>
         <!--Join-->
         <scene sceneID="lX5-zA-l5A">
@@ -107,7 +121,7 @@
                 <viewControllerPlaceholder storyboardName="Join" id="uHI-KL-mhb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3e-8Y-Ope" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="-124"/>
+            <point key="canvasLocation" x="610" y="-82"/>
         </scene>
     </scenes>
 </document>
