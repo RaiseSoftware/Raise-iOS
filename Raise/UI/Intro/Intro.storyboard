@@ -88,7 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="5sc-mM-bGS"/>
                     </view>
                     <navigationItem key="navigationItem" id="Iy3-ej-uxm">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Pdl-sR-aXv">
+                        <barButtonItem key="rightBarButtonItem" image="Settings" id="Pdl-sR-aXv">
                             <connections>
                                 <segue destination="tbR-gl-8B3" kind="show" id="9RP-0T-c3Z"/>
                             </connections>
@@ -124,4 +124,7 @@
             <point key="canvasLocation" x="610" y="-82"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Settings" width="22" height="22"/>
+    </resources>
 </document>

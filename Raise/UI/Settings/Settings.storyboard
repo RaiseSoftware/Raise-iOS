@@ -27,7 +27,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.46274509800000002" green="0.76078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jvJ-MQ-0Ck" firstAttribute="bottom" secondItem="STR-vd-Z2f" secondAttribute="bottom" id="5Sb-i0-btZ"/>
+                            <constraint firstItem="jvJ-MQ-0Ck" firstAttribute="bottom" secondItem="Lbt-t4-9Sj" secondAttribute="bottom" id="5Sb-i0-btZ"/>
                             <constraint firstItem="jvJ-MQ-0Ck" firstAttribute="top" secondItem="STR-vd-Z2f" secondAttribute="top" id="ROQ-aD-vxf"/>
                             <constraint firstItem="jvJ-MQ-0Ck" firstAttribute="leading" secondItem="STR-vd-Z2f" secondAttribute="leading" id="go8-g3-JsO"/>
                             <constraint firstItem="jvJ-MQ-0Ck" firstAttribute="trailing" secondItem="STR-vd-Z2f" secondAttribute="trailing" id="haZ-no-08Y"/>
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="-962.39999999999998" y="-107.49625187406298"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings Table View Controller-->
         <scene sceneID="Sjq-J9-Xad">
             <objects>
-                <tableViewController id="EF0-HM-2QN" sceneMemberID="viewController">
+                <tableViewController id="EF0-HM-2QN" customClass="SettingsTableViewController" customModule="Raise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b4U-Ib-ETh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
