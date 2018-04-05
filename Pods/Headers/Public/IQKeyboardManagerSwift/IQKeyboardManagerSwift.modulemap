@@ -1,0 +1,6 @@
+module IQKeyboardManagerSwift [system] {
+  umbrella header "IQKeyboardManagerSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

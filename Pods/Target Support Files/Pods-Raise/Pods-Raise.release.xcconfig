@@ -1,12 +1,13 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift" "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift" "${PODS_CONFIGURATION_BUILD_DIR}/Starscream" "${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/iOS"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/iOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AppCenter"
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift/SocketIO.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AppCenter"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"sqlite3" -l"z" -framework "AppCenter" -framework "AppCenterAnalytics" -framework "AppCenterCrashes" -framework "AppCenterDistribute" -framework "CoreTelephony" -framework "Foundation" -framework "IQKeyboardManagerSwift" -framework "SVProgressHUD" -framework "SocketIO" -framework "Starscream" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "SafariServices"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AppCenter" "${PODS_ROOT}/Headers/Public/SVProgressHUD"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift" "${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift" "${PODS_CONFIGURATION_BUILD_DIR}/Starscream"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/SVProgressHUD/SVProgressHUD.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift/SocketIO.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.modulemap" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AppCenter" -isystem "${PODS_ROOT}/Headers/Public/SVProgressHUD"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"IQKeyboardManagerSwift" -l"SVProgressHUD" -l"Socket.IO-Client-Swift" -l"Starscream" -l"c++" -l"sqlite3" -l"z" -framework "AppCenter" -framework "AppCenterAnalytics" -framework "AppCenterCrashes" -framework "AppCenterDistribute" -framework "CoreGraphics" -framework "CoreTelephony" -framework "Foundation" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "SafariServices"
+OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/SVProgressHUD/SVProgressHUD.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift/SocketIO.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.modulemap" $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Socket.IO-Client-Swift" "${PODS_CONFIGURATION_BUILD_DIR}/Starscream"
