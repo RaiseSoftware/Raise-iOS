@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         MSAppCenter.start("be052172-d3f9-4639-8792-0239955245fd", withServices: [MSCrashes.self, MSDistribute.self])
 
-        IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
 
         configureStyles()
 
