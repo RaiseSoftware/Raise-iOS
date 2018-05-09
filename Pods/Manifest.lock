@@ -23,7 +23,7 @@ DEPENDENCIES:
   - SVProgressHUD (~> 2.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AppCenter
     - IQKeyboardManagerSwift
     - Socket.IO-Client-Swift
@@ -39,4 +39,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: bf8627ed32be7c3df66dd00eba0c006fdcddc064
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
