@@ -9,4 +9,4 @@ target 'Raise' do
 end
 
 inhibit_all_warnings!
-use_modular_headers!
+use_frameworks!

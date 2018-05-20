@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78968C64C12B61B5D818B5A9 /* Pods_Raise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7891C00918C1B45E2EA5E9 /* Pods_Raise.framework */; };
 		9A009E5B20264A7400F0A4C6 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A009E5A20264A7400F0A4C6 /* Intro.storyboard */; };
 		9A009E5F20264B2200F0A4C6 /* Variane Script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A009E5E20264B2200F0A4C6 /* Variane Script.ttf */; };
 		9A009E6420265E2300F0A4C6 /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A009E6320265E2300F0A4C6 /* Create.storyboard */; };
@@ -43,11 +44,10 @@
 		9ACF69982058A7CE0013AF9F /* CardSubmitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF69972058A7CE0013AF9F /* CardSubmitResponse.swift */; };
 		9ACF699A2058A81D0013AF9F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF69992058A81D0013AF9F /* Card.swift */; };
 		9ACF699C2058AA0B0013AF9F /* ActiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF699B2058AA0B0013AF9F /* ActiveCard.swift */; };
-		B0B3C9D070D3AD2C2CFA7E4E /* libPods-Raise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB564F97ED6D271DAC2E2A7 /* libPods-Raise.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7EB564F97ED6D271DAC2E2A7 /* libPods-Raise.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Raise.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E7891C00918C1B45E2EA5E9 /* Pods_Raise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBABFC367590BE64CA18C75 /* Pods-Raise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raise.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raise/Pods-Raise.release.xcconfig"; sourceTree = "<group>"; };
 		9A009E5A20264A7400F0A4C6 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		9A009E5E20264B2200F0A4C6 /* Variane Script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Variane Script.ttf"; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B3C9D070D3AD2C2CFA7E4E /* libPods-Raise.a in Frameworks */,
+				78968C64C12B61B5D818B5A9 /* Pods_Raise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +288,7 @@
 		9E5960909ECBCCE9E1649522 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EB564F97ED6D271DAC2E2A7 /* libPods-Raise.a */,
+				5E7891C00918C1B45E2EA5E9 /* Pods_Raise.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -305,6 +305,7 @@
 				9A05B603202148C7006F6428 /* Frameworks */,
 				9A05B604202148C7006F6428 /* Resources */,
 				5F7069240844B67549DA3632 /* [CP] Copy Pods Resources */,
+				D9B6E032AF16D7410ABD5075 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,18 +378,38 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
-				"${PODS_ROOT}/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppCenterDistributeResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9B6E032AF16D7410ABD5075 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F8DE5A07043ECA5C1BA4D56D /* [CP] Check Pods Manifest.lock */ = {

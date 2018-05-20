@@ -1,4 +1,4 @@
-module Pods_Raise {
+framework module Pods_Raise {
   umbrella header "Pods-Raise-umbrella.h"
 
   export *
