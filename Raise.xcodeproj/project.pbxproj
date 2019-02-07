@@ -377,7 +377,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Raise/Pods-Raise-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -386,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Raise/Pods-Raise-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D9B6E032AF16D7410ABD5075 /* [CP] Embed Pods Frameworks */ = {
@@ -395,7 +395,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Raise/Pods-Raise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
@@ -410,7 +410,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Raise/Pods-Raise-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Raise/Pods-Raise-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F8DE5A07043ECA5C1BA4D56D /* [CP] Check Pods Manifest.lock */ = {
