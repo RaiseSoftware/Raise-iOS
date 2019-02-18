@@ -1,13 +1,13 @@
 PODS:
-  - AppCenter (1.13.0):
-    - AppCenter/Analytics (= 1.13.0)
-    - AppCenter/Crashes (= 1.13.0)
-  - AppCenter/Analytics (1.13.0):
+  - AppCenter (1.13.1):
+    - AppCenter/Analytics (= 1.13.1)
+    - AppCenter/Crashes (= 1.13.1)
+  - AppCenter/Analytics (1.13.1):
     - AppCenter/Core
-  - AppCenter/Core (1.13.0)
-  - AppCenter/Crashes (1.13.0):
+  - AppCenter/Core (1.13.1)
+  - AppCenter/Crashes (1.13.1):
     - AppCenter/Core
-  - AppCenter/Distribute (1.13.0):
+  - AppCenter/Distribute (1.13.1):
     - AppCenter/Core
   - IQKeyboardManagerSwift (6.2.0)
   - Socket.IO-Client-Swift (14.0.0):
@@ -31,7 +31,7 @@ SPEC REPOS:
     - SVProgressHUD
 
 SPEC CHECKSUMS:
-  AppCenter: a70408f15de23f925001bfc7b7473094a009a4eb
+  AppCenter: c41422e3d69220d17a622e48edebb8c1e0d06ec9
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   Socket.IO-Client-Swift: 21e6a8a23a7d367d5ddfab6cbbd3c679cf3c25d6
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
