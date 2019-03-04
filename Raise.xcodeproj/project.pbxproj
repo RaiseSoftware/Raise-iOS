@@ -21,6 +21,12 @@
 		9A1C54112041D94500EAF4ED /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C54102041D94500EAF4ED /* Socket.swift */; };
 		9A2BC92B2058AC7C0033BD3A /* ActiveCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BC92A2058AC7C0033BD3A /* ActiveCardTableViewCell.swift */; };
 		9A2BC92D2058B0B50033BD3A /* CardSubmitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BC92C2058B0B50033BD3A /* CardSubmitRequest.swift */; };
+		9A2E1552222CA7A300FBC5DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2E1551222CA7A300FBC5DC /* Home.storyboard */; };
+		9A2E1554222CAA3500FBC5DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E1553222CAA3500FBC5DC /* HomeViewController.swift */; };
+		9A2E1557222CAA6F00FBC5DC /* RoundedFilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E1556222CAA6F00FBC5DC /* RoundedFilledButton.swift */; };
+		9A2E155A222CB41500FBC5DC /* Offline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2E1559222CB41500FBC5DC /* Offline.storyboard */; };
+		9A2E155C222CB8B900FBC5DC /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E155B222CB8B900FBC5DC /* OfflineViewController.swift */; };
+		9A2E155E222CBBFA00FBC5DC /* UIScrollViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E155D222CBBFA00FBC5DC /* UIScrollViewExtensions.swift */; };
 		9A38940F204CE63B0049DC4D /* PokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38940E204CE63B0049DC4D /* PokerViewController.swift */; };
 		9A389411204CE6420049DC4D /* Poker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A389410204CE6420049DC4D /* Poker.storyboard */; };
 		9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */; };
@@ -64,6 +70,12 @@
 		9A1C54102041D94500EAF4ED /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		9A2BC92A2058AC7C0033BD3A /* ActiveCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveCardTableViewCell.swift; sourceTree = "<group>"; };
 		9A2BC92C2058B0B50033BD3A /* CardSubmitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSubmitRequest.swift; sourceTree = "<group>"; };
+		9A2E1551222CA7A300FBC5DC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		9A2E1553222CAA3500FBC5DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9A2E1556222CAA6F00FBC5DC /* RoundedFilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedFilledButton.swift; sourceTree = "<group>"; };
+		9A2E1559222CB41500FBC5DC /* Offline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Offline.storyboard; sourceTree = "<group>"; };
+		9A2E155B222CB8B900FBC5DC /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
+		9A2E155D222CBBFA00FBC5DC /* UIScrollViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensions.swift; sourceTree = "<group>"; };
 		9A38940E204CE63B0049DC4D /* PokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerViewController.swift; sourceTree = "<group>"; };
 		9A389410204CE6420049DC4D /* Poker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Poker.storyboard; sourceTree = "<group>"; };
 		9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
@@ -116,8 +128,10 @@
 			children = (
 				9A009E6220265DF200F0A4C6 /* Create */,
 				9A4E9DEC203CF59E006E08D2 /* Game Details */,
+				9A2E1550222CA79900FBC5DC /* Home */,
 				9A009E59202649DA00F0A4C6 /* Intro */,
 				9A009E672026614800F0A4C6 /* Join */,
+				9A2E1558222CB3F000FBC5DC /* Offline */,
 				9A38940D204CE6120049DC4D /* Poker */,
 				9AC89E39205EEF11007FAC64 /* Settings */,
 			);
@@ -179,6 +193,33 @@
 				9A8994A820214E3700D147A9 /* Supporting Files */,
 			);
 			path = Raise;
+			sourceTree = "<group>";
+		};
+		9A2E1550222CA79900FBC5DC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9A2E1551222CA7A300FBC5DC /* Home.storyboard */,
+				9A2E1553222CAA3500FBC5DC /* HomeViewController.swift */,
+				9A2E1555222CAA5B00FBC5DC /* Buttons */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9A2E1555222CAA5B00FBC5DC /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9A2E1556222CAA6F00FBC5DC /* RoundedFilledButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		9A2E1558222CB3F000FBC5DC /* Offline */ = {
+			isa = PBXGroup;
+			children = (
+				9A2E1559222CB41500FBC5DC /* Offline.storyboard */,
+				9A2E155B222CB8B900FBC5DC /* OfflineViewController.swift */,
+			);
+			path = Offline;
 			sourceTree = "<group>";
 		};
 		9A38940D204CE6120049DC4D /* Poker */ = {
@@ -249,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				9A8FECAC203F953C007CC898 /* StringExtensions.swift */,
+				9A2E155D222CBBFA00FBC5DC /* UIScrollViewExtensions.swift */,
 				9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
@@ -357,11 +399,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A389411204CE6420049DC4D /* Poker.storyboard in Resources */,
+				9A2E1552222CA7A300FBC5DC /* Home.storyboard in Resources */,
 				9A009E692026615800F0A4C6 /* Join.storyboard in Resources */,
 				9A009E6420265E2300F0A4C6 /* Create.storyboard in Resources */,
 				9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */,
 				9A4E9DEE203CF5AF006E08D2 /* GameDetails.storyboard in Resources */,
 				9A009E5F20264B2200F0A4C6 /* Variane Script.ttf in Resources */,
+				9A2E155A222CB41500FBC5DC /* Offline.storyboard in Resources */,
 				9AC89E3B205EEF27007FAC64 /* Settings.storyboard in Resources */,
 				9A05B611202148C8006F6428 /* Assets.xcassets in Resources */,
 				9A009E5B20264A7400F0A4C6 /* Intro.storyboard in Resources */,
@@ -442,6 +486,7 @@
 				9ACF699C2058AA0B0013AF9F /* ActiveCard.swift in Sources */,
 				9A2BC92B2058AC7C0033BD3A /* ActiveCardTableViewCell.swift in Sources */,
 				9A4E9DEB203CF45D006E08D2 /* UIViewControllerExtensions.swift in Sources */,
+				9A2E155E222CBBFA00FBC5DC /* UIScrollViewExtensions.swift in Sources */,
 				9A4E9DF0203D011D006E08D2 /* GameDetailsViewController.swift in Sources */,
 				9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */,
 				9A38940F204CE63B0049DC4D /* PokerViewController.swift in Sources */,
@@ -457,12 +502,15 @@
 				9A8FECAB203F8B6F007CC898 /* QRCodeScannerViewController.swift in Sources */,
 				9ABE69C32061CB3C00CA6C5B /* SettingsTableViewController.swift in Sources */,
 				9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */,
+				9A2E1554222CAA3500FBC5DC /* HomeViewController.swift in Sources */,
 				9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */,
 				9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */,
 				9ACF699A2058A81D0013AF9F /* Card.swift in Sources */,
 				9A98793F2055EBAC00138AE1 /* PokerGame.swift in Sources */,
+				9A2E155C222CB8B900FBC5DC /* OfflineViewController.swift in Sources */,
 				9ABED681204CE06100174C33 /* Player.swift in Sources */,
 				9A0C466C204E2AA10003E4CE /* CardCollectionViewCell.swift in Sources */,
+				9A2E1557222CAA6F00FBC5DC /* RoundedFilledButton.swift in Sources */,
 				9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */,
 				9AC89E3F205EF14E007FAC64 /* SettingsViewController.swift in Sources */,
 			);

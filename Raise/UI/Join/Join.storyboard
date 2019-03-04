@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mNi-RE-9OS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mNi-RE-9OS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +37,7 @@
                                 </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-Lr-01H">
-                                <rect key="frame" x="37" y="263.5" width="300" height="100"/>
+                                <rect key="frame" x="37.5" y="263.5" width="300" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGt-qd-7Ka">
                                         <rect key="frame" x="15" y="49.5" width="270" height="1"/>
@@ -89,7 +90,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z85-xK-2Xm">
-                                <rect key="frame" x="37" y="200.5" width="300" height="43"/>
+                                <rect key="frame" x="37.5" y="200.5" width="300" height="43"/>
                                 <string key="text">Enter your name and the Game ID
 in order to join</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -116,7 +117,7 @@ in order to join</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.46274509800000002" green="0.76078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="Orange"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Spl-uo-nno" firstAttribute="bottom" secondItem="EDA-AY-kJ2" secondAttribute="bottom" id="15a-sp-fbJ"/>
@@ -193,4 +194,9 @@ in order to join</string>
             <point key="canvasLocation" x="1351" y="211"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Orange">
+            <color red="1" green="0.59607843137254901" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
