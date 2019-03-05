@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
         }
 
         setModeSelected(.create)
+        updateViewScaling()
     }
 
     @IBAction private func createButtonPressed() {
@@ -83,6 +84,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateViewScaling()
+
         let width = scrollView.frame.size.width
         let page = Int((scrollView.contentOffset.x + (0.5 * width)) / width)
 
@@ -97,5 +100,19 @@ extension HomeViewController: UIScrollViewDelegate {
         }
 
         setModeSelected(mode)
+    }
+
+    private func updateViewScaling() {
+        let width = scrollView.frame.size.width
+        let power: CGFloat = 0.05
+        let minScale: CGFloat = 0.9
+
+        let createViewClosenessToCenter = min(max(1 - scrollView.contentOffset.x / width, 0), 1)
+        let joinViewClosenessToCenter = min(max(1 - abs(width - scrollView.contentOffset.x) / width, 0), 1)
+        let offlineViewClosenessToCenter = min(max(1 - abs((width * 2) - scrollView.contentOffset.x) / width, 0), 1)
+
+        createViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(createViewClosenessToCenter, power)))
+        joinViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(joinViewClosenessToCenter, power)))
+        offlineViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(offlineViewClosenessToCenter, power)))
     }
 }
