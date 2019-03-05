@@ -13,6 +13,7 @@ class ExtendedScrollView: UIView {
     @IBOutlet private var scrollView: UIScrollView!
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        return self.point(inside: point, with: event) ? scrollView : nil
+        let view = super.hitTest(point, with: event)
+        return view == self ? scrollView : view
     }
 }
