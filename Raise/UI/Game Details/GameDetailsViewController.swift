@@ -10,15 +10,15 @@ import UIKit
 
 class GameDetailsViewController: UIViewController {
 
-    @IBOutlet weak var gameIDLabel: UILabel!
-    @IBOutlet weak var passcodeLabel: UILabel!
-    @IBOutlet weak var qrCodeButton: UIButton!
+    @IBOutlet private var gameIDLabel: UILabel!
+    @IBOutlet private var passcodeLabel: UILabel!
+    @IBOutlet private var qrCodeButton: UIButton!
 
-    @IBOutlet weak var containerScrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var playerTableView: UITableView!
+    @IBOutlet private var containerScrollView: UIScrollView!
+    @IBOutlet private var pageControl: UIPageControl!
+    @IBOutlet private var playerTableView: UITableView!
 
-    @IBOutlet weak var startGameButton: UIButton!
+    @IBOutlet private var startGameButton: UIButton!
 
     var gameResponse: GameResponse!
     var players = [Player]() {

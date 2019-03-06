@@ -9,11 +9,11 @@
 import UIKit
 import SVProgressHUD
 
-class JoinViewController: UIViewController {
+class JoinViewController: HomeItemViewController {
 
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var gameIDTextField: UITextField!
-    @IBOutlet weak var joinGameButton: UIButton!
+    @IBOutlet private var userNameTextField: UITextField!
+    @IBOutlet private var gameIDTextField: UITextField!
+    @IBOutlet private var joinGameButton: UIButton!
 
     @IBAction func dismissKeyboard() {
         view.endEditing(true)

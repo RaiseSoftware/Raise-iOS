@@ -10,12 +10,12 @@ import UIKit
 
 class PokerViewController: UIViewController {
 
-    @IBOutlet weak var containerScrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet private var containerScrollView: UIScrollView!
+    @IBOutlet private var pageControl: UIPageControl!
 
-    @IBOutlet weak var selectedImageView: UIImageView!
+    @IBOutlet private var selectedImageView: UIImageView!
 
-    @IBOutlet weak var activeCardTableView: UITableView!
+    @IBOutlet private var activeCardTableView: UITableView!
 
     var activeCards = [ActiveCard]() {
         didSet {

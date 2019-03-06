@@ -10,9 +10,9 @@ import UIKit
 
 class ActiveCardTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var initialLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet private var initialLabel: UILabel!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var cardImageView: UIImageView!
 
     func setUp(with activeCard: ActiveCard) {
         if let firstInitial = activeCard.player.name.first {

@@ -18,9 +18,31 @@
                     <view key="view" contentMode="scaleToFill" id="cpy-2P-b5q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itd-t1-3RP">
+                                <rect key="frame" x="311" y="40" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5Xd-Np-i1X"/>
+                                    <constraint firstAttribute="width" constant="44" id="lMG-0a-NaW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="✕"/>
+                                <connections>
+                                    <action selector="closeButtonPressed" destination="Qw6-tJ-1xs" eventType="touchUpInside" id="Z9f-O4-ZwO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" name="Blue"/>
+                        <constraints>
+                            <constraint firstItem="7hJ-e0-Oxr" firstAttribute="trailing" secondItem="itd-t1-3RP" secondAttribute="trailing" constant="20" id="IqV-GX-zJw"/>
+                            <constraint firstItem="itd-t1-3RP" firstAttribute="top" secondItem="7hJ-e0-Oxr" secondAttribute="top" constant="20" id="RR1-x3-RkQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7hJ-e0-Oxr"/>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="itd-t1-3RP" id="M72-xv-5Ss"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgv-2b-3uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OfflineViewController: UIViewController {
+class OfflineViewController: HomeItemViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,13 +9,13 @@
 import UIKit
 import SVProgressHUD
 
-class CreateViewController: UIViewController {
+class CreateViewController: HomeItemViewController {
 
-    @IBOutlet weak var deckTypeSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var gameNameTextField: UITextField!
-    @IBOutlet weak var requiresPasswordSwitch: UISwitch!
-    @IBOutlet weak var createGameButton: UIButton!
+    @IBOutlet private var deckTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet private var userNameTextField: UITextField!
+    @IBOutlet private var gameNameTextField: UITextField!
+    @IBOutlet private var requiresPasswordSwitch: UISwitch!
+    @IBOutlet private var createGameButton: UIButton!
 
     @IBAction func dismissKeyboard() {
         view.endEditing(true)

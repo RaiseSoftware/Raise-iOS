@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cWn-PJ-ALH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cWn-PJ-ALH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -115,32 +115,46 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select poker deck type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6L-ME-fYh">
-                                <rect key="frame" x="16" y="164" width="343" height="26.5"/>
+                                <rect key="frame" x="79" y="164" width="217" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqN-7O-3Gv">
+                                <rect key="frame" x="311" y="40" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Do6-Ze-NLR"/>
+                                    <constraint firstAttribute="width" constant="44" id="FkF-zr-rPb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="✕"/>
+                                <connections>
+                                    <action selector="closeButtonPressed" destination="cWn-PJ-ALH" eventType="touchUpInside" id="4pX-sA-Epr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46274509800000002" green="0.76078431369999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="19L-Td-ZxI" firstAttribute="trailing" secondItem="ZqN-7O-3Gv" secondAttribute="trailing" constant="20" id="5VT-e6-teG"/>
                             <constraint firstItem="19L-Td-ZxI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aYO-h1-ce0" secondAttribute="trailing" constant="15" id="7qm-n6-Zak"/>
                             <constraint firstItem="57f-eH-Y7w" firstAttribute="trailing" secondItem="19L-Td-ZxI" secondAttribute="trailing" id="BDI-AO-Hkz"/>
                             <constraint firstItem="nAl-Yd-Vn3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="19L-Td-ZxI" secondAttribute="leading" constant="16" id="G7j-7f-a3V"/>
+                            <constraint firstItem="ZqN-7O-3Gv" firstAttribute="top" secondItem="19L-Td-ZxI" secondAttribute="top" constant="20" id="QSL-sd-UDE"/>
                             <constraint firstItem="aYO-h1-ce0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="19L-Td-ZxI" secondAttribute="leading" constant="15" id="UKX-sV-pSY"/>
                             <constraint firstItem="57f-eH-Y7w" firstAttribute="leading" secondItem="19L-Td-ZxI" secondAttribute="leading" id="ZFY-5g-6zl"/>
                             <constraint firstItem="57f-eH-Y7w" firstAttribute="bottom" secondItem="19L-Td-ZxI" secondAttribute="bottom" id="bV9-6T-Pfk"/>
                             <constraint firstItem="O2d-Md-oex" firstAttribute="trailing" secondItem="nAl-Yd-Vn3" secondAttribute="trailing" id="btt-2J-N7d"/>
-                            <constraint firstItem="19L-Td-ZxI" firstAttribute="trailing" secondItem="F6L-ME-fYh" secondAttribute="trailing" constant="16" id="hIT-2m-lR2"/>
                             <constraint firstItem="nAl-Yd-Vn3" firstAttribute="centerX" secondItem="r9z-fA-HSl" secondAttribute="centerX" id="iV5-Db-oKd"/>
                             <constraint firstItem="aYO-h1-ce0" firstAttribute="top" secondItem="nAl-Yd-Vn3" secondAttribute="bottom" constant="50" id="jwL-sh-bad"/>
                             <constraint firstItem="aYO-h1-ce0" firstAttribute="centerX" secondItem="r9z-fA-HSl" secondAttribute="centerX" id="kIl-th-wAK"/>
                             <constraint firstItem="19L-Td-ZxI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nAl-Yd-Vn3" secondAttribute="trailing" constant="16" id="l4t-7w-4Dq"/>
                             <constraint firstItem="nAl-Yd-Vn3" firstAttribute="centerY" secondItem="r9z-fA-HSl" secondAttribute="centerY" id="nyG-32-Ws8"/>
-                            <constraint firstItem="F6L-ME-fYh" firstAttribute="leading" secondItem="19L-Td-ZxI" secondAttribute="leading" constant="16" id="rY9-YW-3oI"/>
                             <constraint firstItem="O2d-Md-oex" firstAttribute="top" secondItem="F6L-ME-fYh" secondAttribute="bottom" constant="15" id="sm2-s9-VjH"/>
                             <constraint firstItem="O2d-Md-oex" firstAttribute="leading" secondItem="nAl-Yd-Vn3" secondAttribute="leading" id="tCd-w5-Q3m"/>
                             <constraint firstItem="nAl-Yd-Vn3" firstAttribute="top" secondItem="O2d-Md-oex" secondAttribute="bottom" constant="50" id="tHx-51-1ro"/>
+                            <constraint firstItem="F6L-ME-fYh" firstAttribute="centerX" secondItem="r9z-fA-HSl" secondAttribute="centerX" id="wMM-w4-Swn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="19L-Td-ZxI"/>
                         <connections>
@@ -148,6 +162,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="ZqN-7O-3Gv" id="KBk-Yn-jiT"/>
                         <outlet property="createGameButton" destination="57f-eH-Y7w" id="7BN-il-5Sr"/>
                         <outlet property="deckTypeSegmentedControl" destination="O2d-Md-oex" id="Nav-ub-ch5"/>
                         <outlet property="gameNameTextField" destination="XoT-SP-7Aw" id="bIa-ZT-eb0"/>

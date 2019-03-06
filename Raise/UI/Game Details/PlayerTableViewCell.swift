@@ -10,8 +10,8 @@ import UIKit
 
 class PlayerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var initialLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private var initialLabel: UILabel!
+    @IBOutlet private var nameLabel: UILabel!
 
     func setUp(with player: Player) {
         if let firstInitial = player.name.first {

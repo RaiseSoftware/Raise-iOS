@@ -16,9 +16,14 @@ class HomeViewController: UIViewController {
     @IBOutlet private var offlineButton: RoundedFilledButton!
     @IBOutlet private var modeLabel: UILabel!
 
+    @IBOutlet private var tapAreas: [UIButton]!
+
     private var createViewController: CreateViewController?
     private var joinViewController: JoinViewController?
     private var offlineViewController: OfflineViewController?
+
+    @IBOutlet var scrollViewFullScreenConstraints: [NSLayoutConstraint]!
+    @IBOutlet var scrollViewMinimizedConstraints: [NSLayoutConstraint]!
 
     enum Mode: Int {
         case create, join, offline
@@ -39,25 +44,58 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         [createViewController, joinViewController, offlineViewController].forEach {
-            $0?.view.isUserInteractionEnabled = false
+            $0?.delegate = self
             $0?.view.clipsToBounds = true
-            $0?.view.layer.cornerRadius = 10.0
+            $0?.view.layer.cornerRadius = 10
+            $0?.updateCloseButtonVisibility(alpha: 0)
         }
 
         setModeSelected(.create)
         updateViewScaling()
     }
 
-    @IBAction private func createButtonPressed() {
-        scrollView.scrollToPage(page: Mode.create.rawValue)
+    @IBAction private func tapAreaPressed(sender: UIButton) {
+        if let mode = Mode(rawValue: sender.tag) {
+            showViewFullScreen(mode)
+        }
     }
 
-    @IBAction private func joinButtonPressed() {
-        scrollView.scrollToPage(page: Mode.join.rawValue)
+    private func showViewFullScreen(_ mode: Mode) {
+        let offset: CGPoint
+        let controller: HomeItemViewController?
+        switch mode {
+        case .create:
+            offset = .zero
+            controller = createViewController
+        case .join:
+            offset = CGPoint(x: view.frame.width + 10, y: 0)
+            controller = joinViewController
+        case .offline:
+            offset = CGPoint(x: (view.frame.width + 10) * 2, y: 0)
+            controller = offlineViewController
+        }
+
+        tapAreas.forEach { $0.isHidden = true }
+        scrollView.isScrollEnabled = false
+
+        UIView.animate(withDuration: 0.5, animations: {
+            NSLayoutConstraint.deactivate(self.scrollViewMinimizedConstraints)
+            NSLayoutConstraint.activate(self.scrollViewFullScreenConstraints)
+
+            controller?.view.layer.cornerRadius = 0
+            controller?.updateCloseButtonVisibility(alpha: 1)
+
+            self.view.layoutIfNeeded()
+            self.scrollView.contentOffset = offset
+        }, completion: { _ in
+            controller?.view.isUserInteractionEnabled = true
+        })
     }
 
-    @IBAction private func offlineButtonPressed() {
-        scrollView.scrollToPage(page: Mode.offline.rawValue)
+    @IBAction private func actionButtonPressed(sender: UIButton) {
+        if let mode = Mode(rawValue: sender.tag) {
+            scrollView.scrollToPage(page: mode.rawValue)
+        }
     }
 
     private func setModeSelected(_ mode: Mode) {
@@ -114,5 +152,33 @@ extension HomeViewController: UIScrollViewDelegate {
         createViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(createViewClosenessToCenter, power)))
         joinViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(joinViewClosenessToCenter, power)))
         offlineViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(offlineViewClosenessToCenter, power)))
+    }
+}
+
+extension HomeViewController: HomeItemDelegate {
+
+    func closePressed(_ controller: HomeItemViewController) {
+        let offset: CGPoint
+        if controller is CreateViewController {
+            offset = .zero
+        } else if controller is JoinViewController {
+            offset = CGPoint(x: view.frame.width - 40, y: 0)
+        } else {
+            offset = CGPoint(x: (view.frame.width - 40) * 2, y: 0)
+        }
+
+        controller.view.isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.5, animations: {
+            NSLayoutConstraint.deactivate(self.scrollViewFullScreenConstraints)
+            NSLayoutConstraint.activate(self.scrollViewMinimizedConstraints)
+
+            controller.view.layer.cornerRadius = 10
+            controller.updateCloseButtonVisibility(alpha: 0)
+            self.view.layoutIfNeeded()
+            self.scrollView.contentOffset = offset
+        }, completion: { _ in
+            self.tapAreas.forEach { $0.isHidden = false }
+            self.scrollView.isScrollEnabled = true
+        })
     }
 }

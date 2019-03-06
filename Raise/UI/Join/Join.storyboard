@@ -98,7 +98,7 @@ in order to join</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----  or  -----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-zF-Tin">
-                                <rect key="frame" x="16" y="383.5" width="343" height="21"/>
+                                <rect key="frame" x="132.5" y="383.5" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -114,6 +114,19 @@ in order to join</string>
                                 </state>
                                 <connections>
                                     <segue destination="Ag7-rz-xNE" kind="presentation" id="jrd-oq-YJS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGQ-bV-G9g">
+                                <rect key="frame" x="311" y="40" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5kx-nV-54I"/>
+                                    <constraint firstAttribute="width" constant="44" id="ywE-r4-f3W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="✕"/>
+                                <connections>
+                                    <action selector="closeButtonPressed" destination="mNi-RE-9OS" eventType="touchUpInside" id="g7Q-hq-qD5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,8 +145,9 @@ in order to join</string>
                             <constraint firstItem="Jc9-Lr-01H" firstAttribute="top" secondItem="z85-xK-2Xm" secondAttribute="bottom" constant="20" id="NO1-Nk-124"/>
                             <constraint firstItem="Spl-uo-nno" firstAttribute="trailing" secondItem="EDA-AY-kJ2" secondAttribute="trailing" id="T9G-aC-KP5"/>
                             <constraint firstItem="z85-xK-2Xm" firstAttribute="centerX" secondItem="HFK-JH-CHN" secondAttribute="centerX" id="VR5-pV-r3o"/>
-                            <constraint firstItem="mY9-zF-Tin" firstAttribute="leading" secondItem="EDA-AY-kJ2" secondAttribute="leading" constant="16" id="eap-eo-kCb"/>
-                            <constraint firstItem="EDA-AY-kJ2" firstAttribute="trailing" secondItem="mY9-zF-Tin" secondAttribute="trailing" constant="16" id="otL-xB-C79"/>
+                            <constraint firstItem="RGQ-bV-G9g" firstAttribute="top" secondItem="EDA-AY-kJ2" secondAttribute="top" constant="20" id="jIJ-XK-55R"/>
+                            <constraint firstItem="mY9-zF-Tin" firstAttribute="centerX" secondItem="HFK-JH-CHN" secondAttribute="centerX" id="oDx-nI-XOL"/>
+                            <constraint firstItem="EDA-AY-kJ2" firstAttribute="trailing" secondItem="RGQ-bV-G9g" secondAttribute="trailing" constant="20" id="uUN-OV-8hh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EDA-AY-kJ2"/>
                         <connections>
@@ -141,6 +155,7 @@ in order to join</string>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="RGQ-bV-G9g" id="xLo-tG-V4z"/>
                         <outlet property="gameIDTextField" destination="AYX-BR-w0z" id="OBy-0U-Z7Z"/>
                         <outlet property="joinGameButton" destination="Spl-uo-nno" id="cGp-xU-CUF"/>
                         <outlet property="userNameTextField" destination="Aq9-D8-tPM" id="rDk-nB-f5p"/>
