@@ -23,7 +23,6 @@
 		9A2BC92D2058B0B50033BD3A /* CardSubmitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BC92C2058B0B50033BD3A /* CardSubmitRequest.swift */; };
 		9A2E1552222CA7A300FBC5DC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2E1551222CA7A300FBC5DC /* Home.storyboard */; };
 		9A2E1554222CAA3500FBC5DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E1553222CAA3500FBC5DC /* HomeViewController.swift */; };
-		9A2E1557222CAA6F00FBC5DC /* RoundedFilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E1556222CAA6F00FBC5DC /* RoundedFilledButton.swift */; };
 		9A2E155A222CB41500FBC5DC /* Offline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2E1559222CB41500FBC5DC /* Offline.storyboard */; };
 		9A2E155C222CB8B900FBC5DC /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E155B222CB8B900FBC5DC /* OfflineViewController.swift */; };
 		9A2E155E222CBBFA00FBC5DC /* UIScrollViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2E155D222CBBFA00FBC5DC /* UIScrollViewExtensions.swift */; };
@@ -42,6 +41,8 @@
 		9A8FECAD203F953C007CC898 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FECAC203F953C007CC898 /* StringExtensions.swift */; };
 		9A98793F2055EBAC00138AE1 /* PokerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98793E2055EBAC00138AE1 /* PokerGame.swift */; };
 		9A9879412055EBB200138AE1 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9879402055EBB200138AE1 /* Token.swift */; };
+		9AA4FAB0223726C300E0F0E5 /* ExtendedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4FAAF223726C300E0F0E5 /* ExtendedScrollView.swift */; };
+		9AA4FAB3223727CE00E0F0E5 /* RoundedFilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4FAB2223727CE00E0F0E5 /* RoundedFilledButton.swift */; };
 		9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA77DBB203E4CC5003BDDC9 /* PlayerTableViewCell.swift */; };
 		9ABE69C32061CB3C00CA6C5B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE69C22061CB3C00CA6C5B /* SettingsTableViewController.swift */; };
 		9ABED681204CE06100174C33 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABED680204CE06100174C33 /* Player.swift */; };
@@ -73,7 +74,6 @@
 		9A2BC92C2058B0B50033BD3A /* CardSubmitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSubmitRequest.swift; sourceTree = "<group>"; };
 		9A2E1551222CA7A300FBC5DC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9A2E1553222CAA3500FBC5DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		9A2E1556222CAA6F00FBC5DC /* RoundedFilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedFilledButton.swift; sourceTree = "<group>"; };
 		9A2E1559222CB41500FBC5DC /* Offline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Offline.storyboard; sourceTree = "<group>"; };
 		9A2E155B222CB8B900FBC5DC /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
 		9A2E155D222CBBFA00FBC5DC /* UIScrollViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensions.swift; sourceTree = "<group>"; };
@@ -92,6 +92,8 @@
 		9A8FECAC203F953C007CC898 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		9A98793E2055EBAC00138AE1 /* PokerGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerGame.swift; sourceTree = "<group>"; };
 		9A9879402055EBB200138AE1 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		9AA4FAAF223726C300E0F0E5 /* ExtendedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedScrollView.swift; sourceTree = "<group>"; };
+		9AA4FAB2223727CE00E0F0E5 /* RoundedFilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedFilledButton.swift; sourceTree = "<group>"; };
 		9AA77DBB203E4CC5003BDDC9 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		9ABE69C22061CB3C00CA6C5B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9ABED680204CE06100174C33 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -203,17 +205,9 @@
 				9A2E1551222CA7A300FBC5DC /* Home.storyboard */,
 				9A2E1553222CAA3500FBC5DC /* HomeViewController.swift */,
 				9A3FBCCA222F46430057AE1D /* HomeItemViewController.swift */,
-				9A2E1555222CAA5B00FBC5DC /* Buttons */,
+				9AA4FAB1223727CE00E0F0E5 /* Views and Buttons */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		9A2E1555222CAA5B00FBC5DC /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				9A2E1556222CAA6F00FBC5DC /* RoundedFilledButton.swift */,
-			);
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 		9A2E1558222CB3F000FBC5DC /* Offline */ = {
@@ -318,6 +312,15 @@
 				9A05B612202148C8006F6428 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9AA4FAB1223727CE00E0F0E5 /* Views and Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9AA4FAAF223726C300E0F0E5 /* ExtendedScrollView.swift */,
+				9AA4FAB2223727CE00E0F0E5 /* RoundedFilledButton.swift */,
+			);
+			path = "Views and Buttons";
 			sourceTree = "<group>";
 		};
 		9AC89E39205EEF11007FAC64 /* Settings */ = {
@@ -491,6 +494,7 @@
 				9A4E9DEB203CF45D006E08D2 /* UIViewControllerExtensions.swift in Sources */,
 				9A2E155E222CBBFA00FBC5DC /* UIScrollViewExtensions.swift in Sources */,
 				9A4E9DF0203D011D006E08D2 /* GameDetailsViewController.swift in Sources */,
+				9AA4FAB0223726C300E0F0E5 /* ExtendedScrollView.swift in Sources */,
 				9AA77DBC203E4CC5003BDDC9 /* PlayerTableViewCell.swift in Sources */,
 				9A38940F204CE63B0049DC4D /* PokerViewController.swift in Sources */,
 				9ACF699620588CFB0013AF9F /* CardValue.swift in Sources */,
@@ -511,10 +515,10 @@
 				9ACF699A2058A81D0013AF9F /* Card.swift in Sources */,
 				9A98793F2055EBAC00138AE1 /* PokerGame.swift in Sources */,
 				9A2E155C222CB8B900FBC5DC /* OfflineViewController.swift in Sources */,
+				9AA4FAB3223727CE00E0F0E5 /* RoundedFilledButton.swift in Sources */,
 				9ABED681204CE06100174C33 /* Player.swift in Sources */,
 				9A3FBCCB222F46430057AE1D /* HomeItemViewController.swift in Sources */,
 				9A0C466C204E2AA10003E4CE /* CardCollectionViewCell.swift in Sources */,
-				9A2E1557222CAA6F00FBC5DC /* RoundedFilledButton.swift in Sources */,
 				9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */,
 				9AC89E3F205EF14E007FAC64 /* SettingsViewController.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet private var scrollView: UIScrollView!
+    @IBOutlet private var scrollView: ExtendedScrollView!
     @IBOutlet private var createButton: RoundedFilledButton!
     @IBOutlet private var joinButton: RoundedFilledButton!
     @IBOutlet private var offlineButton: RoundedFilledButton!
