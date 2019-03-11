@@ -16,6 +16,10 @@ class HomeViewController: UIViewController {
     @IBOutlet private var offlineButton: RoundedFilledButton!
     @IBOutlet private var modeLabel: UILabel!
 
+    @IBOutlet private var createContainerView: UIView!
+    @IBOutlet private var joinContainerView: UIView!
+    @IBOutlet private var offlineContainerView: UIView!
+
     @IBOutlet private var tapAreas: [UIButton]!
 
     private var createViewController: CreateViewController?
@@ -149,9 +153,9 @@ extension HomeViewController: UIScrollViewDelegate {
         let joinViewClosenessToCenter = min(max(1 - abs(width - scrollView.contentOffset.x) / width, 0), 1)
         let offlineViewClosenessToCenter = min(max(1 - abs((width * 2) - scrollView.contentOffset.x) / width, 0), 1)
 
-        createViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(createViewClosenessToCenter, power)))
-        joinViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(joinViewClosenessToCenter, power)))
-        offlineViewController?.view.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(offlineViewClosenessToCenter, power)))
+        createContainerView.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(createViewClosenessToCenter, power)))
+        joinContainerView.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(joinViewClosenessToCenter, power)))
+        offlineContainerView.transform = CGAffineTransform(scaleX: 1, y: max(minScale, pow(offlineViewClosenessToCenter, power)))
     }
 }
 

@@ -172,9 +172,12 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="createButton" destination="KdO-FO-VIE" id="QxU-Ta-pVO"/>
+                        <outlet property="createContainerView" destination="z3u-nB-bSl" id="KAZ-Eb-uH4"/>
                         <outlet property="joinButton" destination="Sz7-hf-7VB" id="r14-So-ehB"/>
+                        <outlet property="joinContainerView" destination="fbY-T5-FJb" id="EO2-6S-wpX"/>
                         <outlet property="modeLabel" destination="9su-uk-Ftf" id="PMN-AP-eVa"/>
                         <outlet property="offlineButton" destination="Cns-h8-7ei" id="UzF-DS-is5"/>
+                        <outlet property="offlineContainerView" destination="ZaD-P7-1nC" id="ZUb-jd-HYE"/>
                         <outlet property="scrollView" destination="PE3-Fh-sa7" id="YC1-3m-9f1"/>
                         <outletCollection property="scrollViewMinimizedConstraints" destination="OEg-nh-Ppl" collectionClass="NSMutableArray" id="YxZ-qe-8Fw"/>
                         <outletCollection property="scrollViewMinimizedConstraints" destination="u9j-Oa-eNA" collectionClass="NSMutableArray" id="MFf-b9-07j"/>
