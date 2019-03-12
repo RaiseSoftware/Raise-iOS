@@ -76,8 +76,8 @@
                             <constraint firstItem="7hJ-e0-Oxr" firstAttribute="trailing" secondItem="itd-t1-3RP" secondAttribute="trailing" constant="20" id="IqV-GX-zJw"/>
                             <constraint firstItem="z9n-Ux-3xs" firstAttribute="trailing" secondItem="7hJ-e0-Oxr" secondAttribute="trailing" id="NJW-wc-h45"/>
                             <constraint firstItem="itd-t1-3RP" firstAttribute="top" secondItem="7hJ-e0-Oxr" secondAttribute="top" constant="20" id="RR1-x3-RkQ"/>
-                            <constraint firstItem="7hJ-e0-Oxr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mhe-KO-9G3" secondAttribute="trailing" constant="37" id="ba1-Qe-hE0"/>
-                            <constraint firstItem="mhe-KO-9G3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7hJ-e0-Oxr" secondAttribute="leading" constant="37" id="fWp-nE-uLy"/>
+                            <constraint firstItem="7hJ-e0-Oxr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mhe-KO-9G3" secondAttribute="trailing" constant="16" id="ba1-Qe-hE0"/>
+                            <constraint firstItem="mhe-KO-9G3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7hJ-e0-Oxr" secondAttribute="leading" constant="16" id="fWp-nE-uLy"/>
                             <constraint firstItem="z9n-Ux-3xs" firstAttribute="leading" secondItem="7hJ-e0-Oxr" secondAttribute="leading" id="qpP-cz-bVs"/>
                             <constraint firstItem="mhe-KO-9G3" firstAttribute="top" secondItem="mGx-j4-9kM" secondAttribute="bottom" constant="15" id="uUd-yM-8h3"/>
                             <constraint firstItem="mGx-j4-9kM" firstAttribute="centerX" secondItem="cpy-2P-b5q" secondAttribute="centerX" id="xPb-Ym-5cE"/>

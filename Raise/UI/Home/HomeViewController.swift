@@ -82,7 +82,7 @@ class HomeViewController: UIViewController {
         tapAreas.forEach { $0.isHidden = true }
         scrollView.isScrollEnabled = false
 
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             NSLayoutConstraint.deactivate(self.scrollViewMinimizedConstraints)
             NSLayoutConstraint.activate(self.scrollViewFullScreenConstraints)
 
@@ -172,7 +172,7 @@ extension HomeViewController: HomeItemDelegate {
         }
 
         controller.view.isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             NSLayoutConstraint.deactivate(self.scrollViewFullScreenConstraints)
             NSLayoutConstraint.activate(self.scrollViewMinimizedConstraints)
 
