@@ -23,26 +23,28 @@ class PokerViewController: UIViewController {
         }
     }
 
-    var pokerGame: PokerGame!
+    var deck: DeckType!
+    var isOffline = false
     var cards = [Card]()
     var selectedCardIndex = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(exitGamePressed))
+        cards = deck.cards
 
-        cards = pokerGame.deckType.cards
+        containerScrollView.isScrollEnabled = !isOffline
+        pageControl.isHidden = isOffline
 
         Socket.shared.activeCardsUpdated = { [weak self] activeCards in
             self?.activeCards = activeCards
         }
     }
 
-    @objc func exitGamePressed() {
+    @IBAction private func exitGamePressed() {
         presentConfirmationAlert(title: "Exit Poker Game", message: "Are you sure you want to exit this game?") { [weak self] _ in
             Socket.shared.disconnect()
-            self?.navigationController?.popToRootViewController(animated: true)
+            self?.dismiss(animated: true)
         }
     }
 }
@@ -107,8 +109,8 @@ extension PokerViewController: UICollectionViewDelegate {
         if selectedCardIndex != indexPath.item {
             selectedCardIndex = indexPath.item
 
-            let cardSubmitRequest = CardSubmitRequest(type: pokerGame.deckType, value: card.value)
-            Socket.shared.send(.cardSubmit, data: cardSubmitRequest)
+            // let cardSubmitRequest = CardSubmitRequest(type: pokerGame.deckType, value: card.value)
+            // Socket.shared.send(.cardSubmit, data: cardSubmitRequest)
             collectionView.reloadData()
         }
     }

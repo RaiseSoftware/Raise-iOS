@@ -10,9 +10,12 @@ import UIKit
 
 class OfflineViewController: HomeItemViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet private var deckTypeSegmentedControl: UISegmentedControl!
 
-        // Do any additional setup after loading the view.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let pokerViewController = segue.destination as? PokerViewController {
+            pokerViewController.isOffline = true
+            pokerViewController.deck = deckTypeSegmentedControl.selectedSegmentIndex == 0 ? .fibonacci : .tshirt
+        }
     }
 }

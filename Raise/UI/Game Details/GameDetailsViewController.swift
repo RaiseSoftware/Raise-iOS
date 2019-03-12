@@ -86,7 +86,7 @@ class GameDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let pokerViewController = segue.destination as? PokerViewController {
-            pokerViewController.pokerGame = gameResponse.pokerGame
+            pokerViewController.deck = gameResponse.pokerGame.deckType
         }
     }
 }

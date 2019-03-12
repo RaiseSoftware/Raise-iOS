@@ -32,21 +32,74 @@
                                     <action selector="closeButtonPressed" destination="Qw6-tJ-1xs" eventType="touchUpInside" id="Z9f-O4-ZwO"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mhe-KO-9G3">
+                                <rect key="frame" x="37.5" y="340" width="300" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="E2L-NO-x7f"/>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="W15-ho-Ydj"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Fibonacci"/>
+                                    <segment title="T-Shirt Sizes"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select poker deck type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGx-j4-9kM">
+                                <rect key="frame" x="79" y="298.5" width="217" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9n-Ux-3xs">
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="8Zb-A4-DDH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <state key="normal" title="START GAME">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.0" alpha="0.30059396399999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EgX-0W-gEA" kind="presentation" id="2WF-HU-KRn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Blue"/>
                         <constraints>
+                            <constraint firstItem="mhe-KO-9G3" firstAttribute="centerX" secondItem="cpy-2P-b5q" secondAttribute="centerX" id="0OI-v6-xfj"/>
+                            <constraint firstItem="z9n-Ux-3xs" firstAttribute="bottom" secondItem="7hJ-e0-Oxr" secondAttribute="bottom" id="CrX-M3-qz6"/>
+                            <constraint firstItem="mhe-KO-9G3" firstAttribute="centerY" secondItem="cpy-2P-b5q" secondAttribute="centerY" constant="20.5" id="Hzi-Bn-4xs"/>
                             <constraint firstItem="7hJ-e0-Oxr" firstAttribute="trailing" secondItem="itd-t1-3RP" secondAttribute="trailing" constant="20" id="IqV-GX-zJw"/>
+                            <constraint firstItem="z9n-Ux-3xs" firstAttribute="trailing" secondItem="7hJ-e0-Oxr" secondAttribute="trailing" id="NJW-wc-h45"/>
                             <constraint firstItem="itd-t1-3RP" firstAttribute="top" secondItem="7hJ-e0-Oxr" secondAttribute="top" constant="20" id="RR1-x3-RkQ"/>
+                            <constraint firstItem="7hJ-e0-Oxr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mhe-KO-9G3" secondAttribute="trailing" constant="37" id="ba1-Qe-hE0"/>
+                            <constraint firstItem="mhe-KO-9G3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7hJ-e0-Oxr" secondAttribute="leading" constant="37" id="fWp-nE-uLy"/>
+                            <constraint firstItem="z9n-Ux-3xs" firstAttribute="leading" secondItem="7hJ-e0-Oxr" secondAttribute="leading" id="qpP-cz-bVs"/>
+                            <constraint firstItem="mhe-KO-9G3" firstAttribute="top" secondItem="mGx-j4-9kM" secondAttribute="bottom" constant="15" id="uUd-yM-8h3"/>
+                            <constraint firstItem="mGx-j4-9kM" firstAttribute="centerX" secondItem="cpy-2P-b5q" secondAttribute="centerX" id="xPb-Ym-5cE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7hJ-e0-Oxr"/>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="itd-t1-3RP" id="M72-xv-5Ss"/>
+                        <outlet property="deckTypeSegmentedControl" destination="mhe-KO-9G3" id="J3o-OL-tMX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgv-2b-3uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="-242"/>
+        </scene>
+        <!--Poker-->
+        <scene sceneID="tco-IJ-JM2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Poker" id="EgX-0W-gEA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="woA-Q3-VEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="-243"/>
         </scene>
     </scenes>
     <resources>
