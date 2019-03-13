@@ -10,9 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        title = "Settings"
+    @IBAction private func closeButtonPressed() {
+        dismiss(animated: true)
     }
 }
