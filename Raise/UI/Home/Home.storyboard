@@ -22,33 +22,33 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VIW-Id-YCb">
                                 <rect key="frame" x="116.5" y="569" width="142" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdO-FO-VIE" customClass="RoundedFilledButton" customModule="Raise" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdO-FO-VIE" customClass="RoundedFilledButton" customModule="Raise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KdO-FO-VIE" secondAttribute="height" multiplier="1:1" id="xXw-Ae-h62"/>
                                         </constraints>
                                         <color key="tintColor" name="Green"/>
-                                        <state key="normal" title="C">
+                                        <state key="normal" image="Create">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="actionButtonPressedWithSender:" destination="dRG-NV-ROv" eventType="touchUpInside" id="al6-N4-if4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sz7-hf-7VB" customClass="RoundedFilledButton" customModule="Raise" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sz7-hf-7VB" customClass="RoundedFilledButton" customModule="Raise" customModuleProvider="target">
                                         <rect key="frame" x="49" y="0.0" width="44" height="44"/>
                                         <color key="tintColor" name="Orange"/>
-                                        <state key="normal" title="J">
+                                        <state key="normal" image="Join">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="actionButtonPressedWithSender:" destination="dRG-NV-ROv" eventType="touchUpInside" id="1PO-Xl-DG0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cns-h8-7ei" customClass="RoundedFilledButton" customModule="Raise" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cns-h8-7ei" customClass="RoundedFilledButton" customModule="Raise" customModuleProvider="target">
                                         <rect key="frame" x="98" y="0.0" width="44" height="44"/>
                                         <color key="tintColor" name="Blue"/>
-                                        <state key="normal" title="O">
+                                        <state key="normal" image="Offline">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -222,6 +222,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Create" width="14" height="14"/>
+        <image name="Join" width="22" height="16"/>
+        <image name="Offline" width="14" height="22"/>
         <namedColor name="Black">
             <color red="0.074509803921568626" green="0.094117647058823528" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

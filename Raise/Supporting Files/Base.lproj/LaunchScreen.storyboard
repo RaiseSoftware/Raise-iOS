@@ -18,16 +18,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raise" translatesAutoresizingMaskIntoConstraints="NO" id="X3M-aw-rI0">
+                                <rect key="frame" x="94.5" y="272.5" width="186" height="122"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" name="Black"/>
+                        <constraints>
+                            <constraint firstItem="X3M-aw-rI0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6Xn-aB-BwT"/>
+                            <constraint firstItem="X3M-aw-rI0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fec-yU-vwg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Raise" width="186" height="122"/>
         <namedColor name="Black">
             <color red="0.074509803921568626" green="0.094117647058823528" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

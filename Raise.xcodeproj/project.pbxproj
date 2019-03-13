@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		78968C64C12B61B5D818B5A9 /* Pods_Raise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E7891C00918C1B45E2EA5E9 /* Pods_Raise.framework */; };
-		9A009E5B20264A7400F0A4C6 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A009E5A20264A7400F0A4C6 /* Intro.storyboard */; };
-		9A009E5F20264B2200F0A4C6 /* Variane Script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A009E5E20264B2200F0A4C6 /* Variane Script.ttf */; };
 		9A009E6420265E2300F0A4C6 /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A009E6320265E2300F0A4C6 /* Create.storyboard */; };
 		9A009E692026615800F0A4C6 /* Join.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A009E682026615800F0A4C6 /* Join.storyboard */; };
 		9A009E6B202667F700F0A4C6 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A009E6A202667F700F0A4C6 /* CreateViewController.swift */; };
@@ -57,8 +55,6 @@
 /* Begin PBXFileReference section */
 		5E7891C00918C1B45E2EA5E9 /* Pods_Raise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBABFC367590BE64CA18C75 /* Pods-Raise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raise.release.xcconfig"; path = "Pods/Target Support Files/Pods-Raise/Pods-Raise.release.xcconfig"; sourceTree = "<group>"; };
-		9A009E5A20264A7400F0A4C6 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
-		9A009E5E20264B2200F0A4C6 /* Variane Script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Variane Script.ttf"; sourceTree = "<group>"; };
 		9A009E6320265E2300F0A4C6 /* Create.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
 		9A009E682026615800F0A4C6 /* Join.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Join.storyboard; sourceTree = "<group>"; };
 		9A009E6A202667F700F0A4C6 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -133,21 +129,12 @@
 				9A009E6220265DF200F0A4C6 /* Create */,
 				9A4E9DEC203CF59E006E08D2 /* Game Details */,
 				9A2E1550222CA79900FBC5DC /* Home */,
-				9A009E59202649DA00F0A4C6 /* Intro */,
 				9A009E672026614800F0A4C6 /* Join */,
 				9A2E1558222CB3F000FBC5DC /* Offline */,
 				9A38940D204CE6120049DC4D /* Poker */,
 				9AC89E39205EEF11007FAC64 /* Settings */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		9A009E59202649DA00F0A4C6 /* Intro */ = {
-			isa = PBXGroup;
-			children = (
-				9A009E5A20264A7400F0A4C6 /* Intro.storyboard */,
-			);
-			path = Intro;
 			sourceTree = "<group>";
 		};
 		9A009E6220265DF200F0A4C6 /* Create */ = {
@@ -306,7 +293,6 @@
 		9A8994A820214E3700D147A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9A009E5E20264B2200F0A4C6 /* Variane Script.ttf */,
 				9A05B615202148C8006F6428 /* Info.plist */,
 				9A05B610202148C8006F6428 /* Assets.xcassets */,
 				9A05B612202148C8006F6428 /* LaunchScreen.storyboard */,
@@ -410,11 +396,9 @@
 				9A009E6420265E2300F0A4C6 /* Create.storyboard in Resources */,
 				9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */,
 				9A4E9DEE203CF5AF006E08D2 /* GameDetails.storyboard in Resources */,
-				9A009E5F20264B2200F0A4C6 /* Variane Script.ttf in Resources */,
 				9A2E155A222CB41500FBC5DC /* Offline.storyboard in Resources */,
 				9AC89E3B205EEF27007FAC64 /* Settings.storyboard in Resources */,
 				9A05B611202148C8006F6428 /* Assets.xcassets in Resources */,
-				9A009E5B20264A7400F0A4C6 /* Intro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
