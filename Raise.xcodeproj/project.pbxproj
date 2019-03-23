@@ -27,6 +27,7 @@
 		9A38940F204CE63B0049DC4D /* PokerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38940E204CE63B0049DC4D /* PokerViewController.swift */; };
 		9A389411204CE6420049DC4D /* Poker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A389410204CE6420049DC4D /* Poker.storyboard */; };
 		9A3FBCCB222F46430057AE1D /* HomeItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3FBCCA222F46430057AE1D /* HomeItemViewController.swift */; };
+		9A4410D422468CCA00BDF1B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A4410D322468CCA00BDF1B4 /* GoogleService-Info.plist */; };
 		9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */; };
 		9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE0203CE76C006E08D2 /* API.swift */; };
 		9A4E9DE4203CE99D006E08D2 /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */; };
@@ -76,6 +77,7 @@
 		9A38940E204CE63B0049DC4D /* PokerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerViewController.swift; sourceTree = "<group>"; };
 		9A389410204CE6420049DC4D /* Poker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Poker.storyboard; sourceTree = "<group>"; };
 		9A3FBCCA222F46430057AE1D /* HomeItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemViewController.swift; sourceTree = "<group>"; };
+		9A4410D322468CCA00BDF1B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
 		9A4E9DE0203CE76C006E08D2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		9A8994A820214E3700D147A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A4410D322468CCA00BDF1B4 /* GoogleService-Info.plist */,
 				9A05B615202148C8006F6428 /* Info.plist */,
 				9A05B610202148C8006F6428 /* Assets.xcassets */,
 				9A05B612202148C8006F6428 /* LaunchScreen.storyboard */,
@@ -397,6 +400,7 @@
 				9A05B614202148C8006F6428 /* LaunchScreen.storyboard in Resources */,
 				9A4E9DEE203CF5AF006E08D2 /* GameDetails.storyboard in Resources */,
 				9A2E155A222CB41500FBC5DC /* Offline.storyboard in Resources */,
+				9A4410D422468CCA00BDF1B4 /* GoogleService-Info.plist in Resources */,
 				9AC89E3B205EEF27007FAC64 /* Settings.storyboard in Resources */,
 				9A05B611202148C8006F6428 /* Assets.xcassets in Resources */,
 			);

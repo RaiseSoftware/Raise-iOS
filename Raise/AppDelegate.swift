@@ -12,6 +12,7 @@ import AppCenterCrashes
 import AppCenterDistribute
 import IQKeyboardManagerSwift
 import SVProgressHUD
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         MSAppCenter.start("be052172-d3f9-4639-8792-0239955245fd", withServices: [MSCrashes.self, MSDistribute.self])
+
+        FirebaseApp.configure()
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
