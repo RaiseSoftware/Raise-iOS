@@ -57,8 +57,7 @@ class JoinViewController: HomeItemViewController {
     func promptForPassword() {
         let alertController = UIAlertController(title: "Enter Passcode", message: nil, preferredStyle: .alert)
         alertController.addTextField { textField in
-            textField.autocorrectionType = .no
-            textField.autocapitalizationType = .allCharacters
+            textField.keyboardType = .numberPad
         }
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)

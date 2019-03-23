@@ -14,7 +14,6 @@ class CreateViewController: HomeItemViewController {
     @IBOutlet private var deckTypeSegmentedControl: UISegmentedControl!
     @IBOutlet private var userNameTextField: UITextField!
     @IBOutlet private var gameNameTextField: UITextField!
-    @IBOutlet private var requiresPasswordSwitch: UISwitch!
     @IBOutlet private var createGameButton: UIButton!
 
     @IBAction func dismissKeyboard() {
@@ -25,9 +24,32 @@ class CreateViewController: HomeItemViewController {
         createGameButton.isEnabled = userNameTextField.hasText && gameNameTextField.hasText
     }
 
-    @IBAction func createGameButtonPressed() {
+    @IBAction func setPasswordPressed() {
         dismissKeyboard()
+        promptForPassword()
+    }
 
+    private func promptForPassword() {
+        let alertController = UIAlertController(title: "Enter Passcode", message: nil, preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.keyboardType = .numberPad
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let submitAction = UIAlertAction(title: "Confirm", style: .default) { [weak self] _ in
+            if let passcode = alertController.textFields?.first?.text {
+                self?.createGame(passcode: passcode)
+            }
+        }
+
+        alertController.addAction(cancelAction)
+        alertController.addAction(submitAction)
+
+        present(alertController, animated: true)
+    }
+
+
+    private func createGame(passcode: String) {
         guard let gameName = gameNameTextField.text, let moderatorName = userNameTextField.text else {
             assertionFailure("Missing game or user name")
             return
@@ -40,7 +62,7 @@ class CreateViewController: HomeItemViewController {
             deckType = .tshirt
         }
 
-        let request = CreateRequest(gameName: gameName, deckType: deckType, requiresPasscode: requiresPasswordSwitch.isOn, moderatorName: moderatorName)
+        let request = CreateRequest(gameName: gameName, deckType: deckType, passcode: passcode, moderatorName: moderatorName)
         SVProgressHUD.show()
         API.createGame(request) { [weak self] response in
             SVProgressHUD.dismiss()
