@@ -64,7 +64,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.30059396399999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EgX-0W-gEA" kind="presentation" id="2WF-HU-KRn"/>
+                                    <action selector="startPressed" destination="Qw6-tJ-1xs" eventType="touchUpInside" id="HRQ-Ng-esq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,14 +92,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgv-2b-3uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="-242"/>
-        </scene>
-        <!--Poker-->
-        <scene sceneID="tco-IJ-JM2">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Poker" id="EgX-0W-gEA" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="woA-Q3-VEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="874" y="-243"/>
         </scene>
     </scenes>
     <resources>

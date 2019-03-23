@@ -12,10 +12,14 @@ class OfflineViewController: HomeItemViewController {
 
     @IBOutlet private var deckTypeSegmentedControl: UISegmentedControl!
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let pokerViewController = segue.destination as? PokerViewController {
-            pokerViewController.isOffline = true
-            pokerViewController.deck = deckTypeSegmentedControl.selectedSegmentIndex == 0 ? .fibonacci : .tshirt
+    @IBAction private func startPressed() {
+        if let pokerVC = UIStoryboard(name: "Poker", bundle: nil).instantiateInitialViewController() as? PokerViewController {
+            pokerVC.isOffline = true
+            pokerVC.deck = deckTypeSegmentedControl.selectedSegmentIndex == 0 ? .fibonacci : .tshirt
+
+            present(pokerVC, animated: true) {
+                self.delegate?.closePressed(self)
+            }
         }
     }
 }
