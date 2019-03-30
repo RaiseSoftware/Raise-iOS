@@ -39,7 +39,7 @@ class JoinViewController: HomeItemViewController {
         API.findGame(gameId, name: name, passcode: passcode, success: { [weak self] response in
             SVProgressHUD.dismiss()
             if let gameDetailsViewController = UIStoryboard(name: "GameDetails", bundle: nil).instantiateInitialViewController() as? GameDetailsViewController {
-                gameDetailsViewController.gameResponse = response
+//                gameDetailsViewController.gameResponse = response
                 self?.navigationController?.pushViewController(gameDetailsViewController, animated: true)
             } else {
                 self?.presentErrorAlert(message: "Unable to join game. Please verify code and try again.")

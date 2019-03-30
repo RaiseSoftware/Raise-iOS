@@ -28,7 +28,7 @@
 		9A389411204CE6420049DC4D /* Poker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A389410204CE6420049DC4D /* Poker.storyboard */; };
 		9A3FBCCB222F46430057AE1D /* HomeItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3FBCCA222F46430057AE1D /* HomeItemViewController.swift */; };
 		9A4410D422468CCA00BDF1B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A4410D322468CCA00BDF1B4 /* GoogleService-Info.plist */; };
-		9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */; };
+		9A4410D62246950800BDF1B4 /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4410D52246950800BDF1B4 /* EncodableExtensions.swift */; };
 		9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE0203CE76C006E08D2 /* API.swift */; };
 		9A4E9DE4203CE99D006E08D2 /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */; };
 		9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E9DE5203CE9D4006E08D2 /* DeckType.swift */; };
@@ -78,7 +78,7 @@
 		9A389410204CE6420049DC4D /* Poker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Poker.storyboard; sourceTree = "<group>"; };
 		9A3FBCCA222F46430057AE1D /* HomeItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemViewController.swift; sourceTree = "<group>"; };
 		9A4410D322468CCA00BDF1B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
+		9A4410D52246950800BDF1B4 /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
 		9A4E9DE0203CE76C006E08D2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9A4E9DE3203CE99D006E08D2 /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 		9A4E9DE5203CE9D4006E08D2 /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 		9A4E9DDD203CE61D006E08D2 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				9A4E9DDE203CE636006E08D2 /* CreateRequest.swift */,
 				9A2BC92C2058B0B50033BD3A /* CardSubmitRequest.swift */,
 			);
 			path = Requests;
@@ -278,6 +277,7 @@
 				9A8FECAC203F953C007CC898 /* StringExtensions.swift */,
 				9A2E155D222CBBFA00FBC5DC /* UIScrollViewExtensions.swift */,
 				9A4E9DEA203CF45D006E08D2 /* UIViewControllerExtensions.swift */,
+				9A4410D52246950800BDF1B4 /* EncodableExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,7 +512,6 @@
 				9ABE69C32061CB3C00CA6C5B /* SettingsTableViewController.swift in Sources */,
 				9A05B60A202148C7006F6428 /* AppDelegate.swift in Sources */,
 				9A2E1554222CAA3500FBC5DC /* HomeViewController.swift in Sources */,
-				9A4E9DDF203CE636006E08D2 /* CreateRequest.swift in Sources */,
 				9A4E9DE1203CE76C006E08D2 /* API.swift in Sources */,
 				9ACF699A2058A81D0013AF9F /* Card.swift in Sources */,
 				9A98793F2055EBAC00138AE1 /* PokerGame.swift in Sources */,
@@ -523,6 +522,7 @@
 				9A0C466C204E2AA10003E4CE /* CardCollectionViewCell.swift in Sources */,
 				9A4E9DE6203CE9D4006E08D2 /* DeckType.swift in Sources */,
 				9AC89E3F205EF14E007FAC64 /* SettingsViewController.swift in Sources */,
+				9A4410D62246950800BDF1B4 /* EncodableExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

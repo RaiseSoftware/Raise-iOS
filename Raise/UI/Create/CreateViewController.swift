@@ -50,8 +50,14 @@ class CreateViewController: HomeItemViewController {
 
 
     private func createGame(passcode: String) {
-        guard let gameName = gameNameTextField.text, let moderatorName = userNameTextField.text else {
-            assertionFailure("Missing game or user name")
+        guard let gameName = gameNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            let moderatorName = userNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+                assertionFailure("Missing game or user name")
+                return
+        }
+
+        guard !gameName.isEmpty, !moderatorName.isEmpty else {
+            presentErrorAlert(message: "Please complete all fields")
             return
         }
 
@@ -62,15 +68,18 @@ class CreateViewController: HomeItemViewController {
             deckType = .tshirt
         }
 
-        let request = CreateRequest(gameName: gameName, deckType: deckType, passcode: passcode, moderatorName: moderatorName)
+        let player = Player(name: moderatorName, roles: [.moderator])
+        let pokerGame = PokerGame(gameName: gameName, deckType: deckType, qrcode: "", passcode: passcode, players: [player])
         SVProgressHUD.show()
-        API.createGame(request) { [weak self] response in
+        API.createGame(pokerGame) { [weak self] error in
             SVProgressHUD.dismiss()
-            if let response = response, let gameDetailsViewController = UIStoryboard(name: "GameDetails", bundle: nil).instantiateInitialViewController() as? GameDetailsViewController {
-                gameDetailsViewController.gameResponse = response
-                self?.navigationController?.pushViewController(gameDetailsViewController, animated: true)
+            if let error = error {
+                self?.presentErrorAlert(message: error.localizedDescription)
             } else {
-                self?.presentErrorAlert(message: "Unable to create game. Please try again.")
+                if let gameDetailsViewController = UIStoryboard(name: "GameDetails", bundle: nil).instantiateInitialViewController() as? GameDetailsViewController {
+                    gameDetailsViewController.game = pokerGame
+                    self?.present(gameDetailsViewController, animated: true)
+                }
             }
         }
     }

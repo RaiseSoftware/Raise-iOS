@@ -20,7 +20,7 @@ class GameDetailsViewController: UIViewController {
 
     @IBOutlet private var startGameButton: UIButton!
 
-    var gameResponse: GameResponse!
+    var game: PokerGame!
     var players = [Player]() {
         didSet {
             startGameButton.isEnabled = players.count > 0
@@ -35,16 +35,16 @@ class GameDetailsViewController: UIViewController {
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(exitGamePressed))
 
-        gameIDLabel.text = "Game ID: \(gameResponse.pokerGame.gameId)"
+//        gameIDLabel.text = "Game ID: \(gameResponse.pokerGame.gameId)"
 
-        if let passcode = gameResponse.pokerGame.passcode, !passcode.isEmpty {
-            passcodeLabel.isHidden = false
-            passcodeLabel.text = "Passcode: \(passcode)"
-        } else {
-            passcodeLabel.isHidden = true
-        }
+//        if let passcode = gameResponse.pokerGame.passcode, !passcode.isEmpty {
+//            passcodeLabel.isHidden = false
+            passcodeLabel.text = "Passcode: \(game.passcode)"
+//        } else {
+//            passcodeLabel.isHidden = true
+//        }
 
-        let base64QRCodeImageComponents = gameResponse.pokerGame.qrcode.components(separatedBy: ",")
+        let base64QRCodeImageComponents = game.qrcode.components(separatedBy: ",")
         if base64QRCodeImageComponents.count > 1, let imageData = Data(base64Encoded: base64QRCodeImageComponents[1]) {
             qrCodeButton.imageView?.contentMode = .scaleAspectFit
             qrCodeButton.setImage(UIImage(data: imageData)?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -52,7 +52,7 @@ class GameDetailsViewController: UIViewController {
     }
 
     func configureSocket() {
-        Socket.shared.connect(token: gameResponse.token.token)
+//        Socket.shared.connect(token: gameResponse.token.token)
 
         Socket.shared.playersUpdated = { [weak self] players in
             self?.players = players
@@ -86,7 +86,7 @@ class GameDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let pokerViewController = segue.destination as? PokerViewController {
-            pokerViewController.deck = gameResponse.pokerGame.deckType
+            pokerViewController.deck = game.deckType
         }
     }
 }

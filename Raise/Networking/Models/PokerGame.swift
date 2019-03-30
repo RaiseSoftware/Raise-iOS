@@ -10,8 +10,17 @@ import Foundation
 
 struct PokerGame: Codable {
 
-    let gameId: String
-    let passcode: String?
-    let qrcode: String
+    let gameName: String
     let deckType: DeckType
+    let qrcode: String
+    let passcode: String
+    let players: [Player]
+
+    init(gameName: String, deckType: DeckType, qrcode: String, passcode: String, players: [Player]) {
+        self.gameName = gameName
+        self.deckType = deckType
+        self.qrcode = qrcode
+        self.passcode = passcode
+        self.players = players
+    }
 }
