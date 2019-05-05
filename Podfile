@@ -1,8 +1,8 @@
 platform :ios, '11.0'
 
 target 'Raise' do
-    pod 'AppCenter', '~> 1.0'
-    pod 'AppCenter/Distribute', '~> 1.0'
+    pod 'AppCenter', '~> 2.0'
+    pod 'AppCenter/Distribute', '~> 2.0'
     pod 'IQKeyboardManagerSwift', '~> 6.0'
     pod 'Socket.IO-Client-Swift', '~> 15.0'
     pod 'SVProgressHUD', '~> 2.0'
