@@ -6,8 +6,8 @@ target 'Raise' do
     pod 'IQKeyboardManagerSwift', '~> 6.0'
     pod 'Socket.IO-Client-Swift', '~> 15.0'
     pod 'SVProgressHUD', '~> 2.0'
-    pod 'Firebase/Core', '~> 5.0'
-    pod 'Firebase/Firestore', '~> 5.0'
+    pod 'Firebase/Core', '~> 6.0'
+    pod 'Firebase/Firestore', '~> 6.0'
 end
 
 inhibit_all_warnings!
