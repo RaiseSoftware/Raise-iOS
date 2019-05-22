@@ -38,6 +38,8 @@ using firebase::firestore::model::DatabaseId;
 using firebase::firestore::model::FieldMask;
 using firebase::firestore::model::FieldPath;
 using firebase::firestore::model::FieldValue;
+using firebase::firestore::model::FieldValueOptions;
+using firebase::firestore::model::ServerTimestampBehavior;
 using firebase::firestore::util::Comparator;
 using firebase::firestore::util::CompareMixedNumber;
 using firebase::firestore::util::DoubleBitwiseEquals;
@@ -47,23 +49,6 @@ using firebase::firestore::util::ReverseOrder;
 using firebase::firestore::util::WrapCompare;
 
 NS_ASSUME_NONNULL_BEGIN
-
-#pragma mark - FSTFieldValueOptions
-
-@implementation FSTFieldValueOptions
-
-- (instancetype)initWithServerTimestampBehavior:(ServerTimestampBehavior)serverTimestampBehavior
-                   timestampsInSnapshotsEnabled:(BOOL)timestampsInSnapshotsEnabled {
-  self = [super init];
-
-  if (self) {
-    _serverTimestampBehavior = serverTimestampBehavior;
-    _timestampsInSnapshotsEnabled = timestampsInSnapshotsEnabled;
-  }
-  return self;
-}
-
-@end
 
 #pragma mark - FSTFieldValue
 
@@ -88,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
   @throw FSTAbstractMethodException();  // NOLINT
 }
 
-- (id)valueWithOptions:(FSTFieldValueOptions *)options {
+- (id)valueWithOptions:(const FieldValueOptions &)options {
   return [self value];
 }
 
@@ -337,8 +322,8 @@ NS_ASSUME_NONNULL_BEGIN
   return self.internalValue;
 }
 
-- (id)valueWithOptions:(FSTFieldValueOptions *)options {
-  if (options.timestampsInSnapshotsEnabled) {
+- (id)valueWithOptions:(const FieldValueOptions &)options {
+  if (options.timestamps_in_snapshots_enabled()) {
     return self.value;
   } else {
     return [self.value dateValue];
@@ -399,16 +384,16 @@ NS_ASSUME_NONNULL_BEGIN
   return [NSNull null];
 }
 
-- (id)valueWithOptions:(FSTFieldValueOptions *)options {
-  switch (options.serverTimestampBehavior) {
-    case ServerTimestampBehavior::None:
+- (id)valueWithOptions:(const FieldValueOptions &)options {
+  switch (options.server_timestamp_behavior()) {
+    case ServerTimestampBehavior::kNone:
       return [NSNull null];
-    case ServerTimestampBehavior::Estimate:
+    case ServerTimestampBehavior::kEstimate:
       return [[FSTTimestampValue timestampValue:self.localWriteTime] valueWithOptions:options];
-    case ServerTimestampBehavior::Previous:
+    case ServerTimestampBehavior::kPrevious:
       return self.previousValue ? [self.previousValue valueWithOptions:options] : [NSNull null];
     default:
-      HARD_FAIL("Unexpected server timestamp option: %s", options.serverTimestampBehavior);
+      HARD_FAIL("Unexpected server timestamp option: %s", options.server_timestamp_behavior());
   }
 }
 
@@ -620,7 +605,7 @@ static NSComparisonResult CompareBytes(NSData *left, NSData *right) {
       return cmp;
     }
     cmp = WrapCompare(self.databaseID->database_id(), ref.databaseID->database_id());
-    return cmp != NSOrderedSame ? cmp : CompareKeys(self.key.key, ref.key.key);
+    return cmp != NSOrderedSame ? cmp : WrapCompare(self.key.key, ref.key.key);
   } else {
     return [self defaultCompare:other];
   }
@@ -633,15 +618,6 @@ static NSComparisonResult CompareBytes(NSData *left, NSData *right) {
 /**
  * Specialization of Comparator for NSStrings.
  */
-// TODO(b/37267885): Add truncation support
-template <>
-struct Comparator<NSString *> {
-  bool operator()(NSString *left, NSString *right) const {
-    Comparator<absl::string_view> lessThan;
-    return lessThan(MakeString(left), MakeString(right));
-  }
-};
-
 static const NSComparator StringComparator = ^NSComparisonResult(NSString *left, NSString *right) {
   return WrapCompare(left, right);
 };
@@ -689,7 +665,7 @@ static const NSComparator StringComparator = ^NSComparisonResult(NSString *left,
   return result;
 }
 
-- (id)valueWithOptions:(FSTFieldValueOptions *)options {
+- (id)valueWithOptions:(const FieldValueOptions &)options {
   NSMutableDictionary *result = [NSMutableDictionary dictionary];
   [self.internalValue
       enumerateKeysAndObjectsUsingBlock:^(NSString *key, FSTFieldValue *obj, BOOL *stop) {
@@ -872,7 +848,7 @@ static const NSComparator StringComparator = ^NSComparisonResult(NSString *left,
   return result;
 }
 
-- (id)valueWithOptions:(FSTFieldValueOptions *)options {
+- (id)valueWithOptions:(const FieldValueOptions &)options {
   NSMutableArray *result = [NSMutableArray arrayWithCapacity:_internalValue.count];
   [self.internalValue enumerateObjectsUsingBlock:^(FSTFieldValue *obj, NSUInteger idx, BOOL *stop) {
     [result addObject:[obj valueWithOptions:options]];
@@ -1022,8 +998,5 @@ static const NSComparator StringComparator = ^NSComparisonResult(NSString *left,
 }
 
 @end
-
-template <>
-struct Comparator<FieldValue> : public std::less<FieldValue> {};
 
 NS_ASSUME_NONNULL_END

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google
+ * Copyright 2019 Google
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-#import "FIRQuery.h"
+#import "FIRFirestoreSettings.h"
 
-@class FSTQuery;
+#import <Foundation/Foundation.h>
+
+#include "Firestore/core/src/firebase/firestore/api/settings.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- * An Internal class extension for `FIRQuery` that exposes the init method to classes
- * that need to derive from it.
- */
-@interface FIRQuery (/*Init*/)
-- (instancetype)initWithQuery:(FSTQuery *)query
-                    firestore:(FIRFirestore *)firestore NS_DESIGNATED_INITIALIZER;
+@interface FIRFirestoreSettings (Internal)
+
+/** Converts this FIRFirestoreSettings instance into an api::Settings object. */
+- (firebase::firestore::api::Settings)internalSettings;
+
 @end
 
 NS_ASSUME_NONNULL_END

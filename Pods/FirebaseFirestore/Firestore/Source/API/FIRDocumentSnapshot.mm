@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-#import "FIRDocumentSnapshot.h"
+#import "FIRDocumentSnapshot+Internal.h"
 
 #include <utility>
 
 #include "Firestore/core/src/firebase/firestore/util/warnings.h"
-
-#import "FIRFirestoreSettings.h"
 
 #import "Firestore/Source/API/FIRDocumentReference+Internal.h"
 #import "Firestore/Source/API/FIRFieldPath+Internal.h"
@@ -32,19 +30,24 @@
 #include "Firestore/core/src/firebase/firestore/api/document_snapshot.h"
 #include "Firestore/core/src/firebase/firestore/api/firestore.h"
 #include "Firestore/core/src/firebase/firestore/api/input_validation.h"
+#include "Firestore/core/src/firebase/firestore/api/settings.h"
 #include "Firestore/core/src/firebase/firestore/model/database_id.h"
 #include "Firestore/core/src/firebase/firestore/model/document_key.h"
 #include "Firestore/core/src/firebase/firestore/model/field_value.h"
+#include "Firestore/core/src/firebase/firestore/model/field_value_options.h"
 #include "Firestore/core/src/firebase/firestore/util/hard_assert.h"
 #include "Firestore/core/src/firebase/firestore/util/string_apple.h"
 
 namespace util = firebase::firestore::util;
 using firebase::firestore::api::DocumentSnapshot;
 using firebase::firestore::api::Firestore;
+using firebase::firestore::api::SnapshotMetadata;
 using firebase::firestore::api::ThrowInvalidArgument;
 using firebase::firestore::model::DatabaseId;
 using firebase::firestore::model::DocumentKey;
 using firebase::firestore::model::FieldValue;
+using firebase::firestore::model::FieldValueOptions;
+using firebase::firestore::model::ServerTimestampBehavior;
 using firebase::firestore::util::WrapNSString;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -57,11 +60,11 @@ namespace {
 ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavior behavior) {
   switch (behavior) {
     case FIRServerTimestampBehaviorNone:
-      return ServerTimestampBehavior::None;
+      return ServerTimestampBehavior::kNone;
     case FIRServerTimestampBehaviorEstimate:
-      return ServerTimestampBehavior::Estimate;
+      return ServerTimestampBehavior::kEstimate;
     case FIRServerTimestampBehaviorPrevious:
-      return ServerTimestampBehavior::Previous;
+      return ServerTimestampBehavior::kPrevious;
     default:
       HARD_FAIL("Unexpected server timestamp option: %s", behavior);
   }
@@ -82,7 +85,7 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
   return self;
 }
 
-- (instancetype)initWithFirestore:(Firestore *)firestore
+- (instancetype)initWithFirestore:(std::shared_ptr<Firestore>)firestore
                       documentKey:(DocumentKey)documentKey
                          document:(nullable FSTDocument *)document
                          metadata:(SnapshotMetadata)metadata {
@@ -90,7 +93,7 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
   return [self initWithSnapshot:std::move(wrapped)];
 }
 
-- (instancetype)initWithFirestore:(Firestore *)firestore
+- (instancetype)initWithFirestore:(std::shared_ptr<Firestore>)firestore
                       documentKey:(DocumentKey)documentKey
                          document:(nullable FSTDocument *)document
                         fromCache:(bool)fromCache
@@ -120,7 +123,7 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
   return _snapshot.exists();
 }
 
-- (FSTDocument *)internalDocument {
+- (nullable FSTDocument *)internalDocument {
   return _snapshot.internal_document();
 }
 
@@ -147,7 +150,7 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
 
 - (nullable NSDictionary<NSString *, id> *)dataWithServerTimestampBehavior:
     (FIRServerTimestampBehavior)serverTimestampBehavior {
-  FSTFieldValueOptions *options = [self optionsForServerTimestampBehavior:serverTimestampBehavior];
+  FieldValueOptions options = [self optionsForServerTimestampBehavior:serverTimestampBehavior];
   FSTObjectValue *data = _snapshot.GetData();
   return data == nil ? nil : [self convertedObject:data options:options];
 }
@@ -168,7 +171,7 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
   }
 
   FSTFieldValue *fieldValue = _snapshot.GetValue(fieldPath.internalValue);
-  FSTFieldValueOptions *options = [self optionsForServerTimestampBehavior:serverTimestampBehavior];
+  FieldValueOptions options = [self optionsForServerTimestampBehavior:serverTimestampBehavior];
   return fieldValue == nil ? nil : [self convertedValue:fieldValue options:options];
 }
 
@@ -176,18 +179,15 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
   return [self valueForField:key];
 }
 
-- (FSTFieldValueOptions *)optionsForServerTimestampBehavior:
+- (FieldValueOptions)optionsForServerTimestampBehavior:
     (FIRServerTimestampBehavior)serverTimestampBehavior {
   SUPPRESS_DEPRECATED_DECLARATIONS_BEGIN()
-  return [[FSTFieldValueOptions alloc]
-      initWithServerTimestampBehavior:InternalServerTimestampBehavior(serverTimestampBehavior)
-         timestampsInSnapshotsEnabled:_snapshot.firestore()
-                                          ->settings()
-                                          .timestampsInSnapshotsEnabled];
+  return FieldValueOptions(InternalServerTimestampBehavior(serverTimestampBehavior),
+                           _snapshot.firestore()->settings().timestamps_in_snapshots_enabled());
   SUPPRESS_END()
 }
 
-- (id)convertedValue:(FSTFieldValue *)value options:(FSTFieldValueOptions *)options {
+- (id)convertedValue:(FSTFieldValue *)value options:(const FieldValueOptions &)options {
   if (value.type == FieldValue::Type::Object) {
     return [self convertedObject:(FSTObjectValue *)value options:options];
   } else if (value.type == FieldValue::Type::Array) {
@@ -213,7 +213,7 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
 }
 
 - (NSDictionary<NSString *, id> *)convertedObject:(FSTObjectValue *)objectValue
-                                          options:(FSTFieldValueOptions *)options {
+                                          options:(const FieldValueOptions &)options {
   NSMutableDictionary *result = [NSMutableDictionary dictionary];
   [objectValue.internalValue
       enumerateKeysAndObjectsUsingBlock:^(NSString *key, FSTFieldValue *value, BOOL *stop) {
@@ -223,7 +223,7 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
 }
 
 - (NSArray<id> *)convertedArray:(FSTArrayValue *)arrayValue
-                        options:(FSTFieldValueOptions *)options {
+                        options:(const FieldValueOptions &)options {
   NSArray<FSTFieldValue *> *internalValue = arrayValue.internalValue;
   NSMutableArray *result = [NSMutableArray arrayWithCapacity:internalValue.count];
   [internalValue enumerateObjectsUsingBlock:^(id value, NSUInteger idx, BOOL *stop) {
